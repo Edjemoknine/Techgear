@@ -8,9 +8,9 @@ type Props = {
 };
 const HeadTitle = ({ title, description, link }: Props) => {
   return (
-    <div className="flex flex-col itemes-center">
-      <h1 className="text-5xl text-primary/50 font-black">{title}</h1>
-      <h2 className="text-3xl font-semibold text-white -mt-6">{description}</h2>
+    <div className="flex flex-col items-center my-16 w-full">
+      <h1 className="text-7xl text-primary/30 font-black">{title}</h1>
+      <h2 className="text-4xl font-semibold text-white -mt-6">{description}</h2>
       <Link href={link} className="flex items-center gap-3 text-primary">
         view more <ArrowRight />
       </Link>

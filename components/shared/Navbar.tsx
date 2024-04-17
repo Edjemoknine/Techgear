@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import { Button } from "../ui/button";
+import Logo from "./Logo";
 const links = [
   { lebl: "HOME", href: "/" },
   { lebl: "PRODUCTS", href: "/products" },
@@ -10,20 +12,23 @@ const links = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="w-full fixed top-0 ">
+    <header className="w-full fixed top-0 py-6 bg-black z-40">
       <div className="max-w-6xl mx-auto px-8 flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl font-black text-white">
-            techgear <span className="text-primary">.</span>
-          </h1>
-        </div>
-        <nav className="flex justify-between gap-6 items-center text-secondary hover:text-primary duration-300">
+        <Logo />
+        <nav className="flex justify-between gap-8 items-center ">
           {links.map((link) => (
-            <Link href={link.href} key={link.href}>
+            <Link
+              className="text-gray-500 hover:text-primary duration-300"
+              href={link.href}
+              key={link.href}
+            >
               {link.lebl}
             </Link>
           ))}
-          <Button variant="outline" className="hover:text-primary">
+          <Button
+            variant="outline"
+            className="text-white bg-transparent hover:bg-primary"
+          >
             <Link href={"/sign"}>SIGN IN</Link>
           </Button>
         </nav>
