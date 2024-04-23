@@ -16,7 +16,7 @@ const Products = () => {
         link=""
       />
 
-      <div className="grid w-full md:grid-cols-3 gap-4 grid-cols-1">
+      <div className="grid w-full md:grid-cols-3 gap-8 grid-cols-1">
         {products.map((product) => (
           <ProductCard product={product} key={product.image} />
         ))}

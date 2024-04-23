@@ -7,9 +7,9 @@ const Hero = () => {
     <div className="max-w-6xl mx-auto px-8 min-h-screen grid place-items-center ">
       <div className="grid md:grid-cols-2 gap-6 grid-cols-1 pt-24">
         <div className="flex flex-col gap-6 items-start justify-center text-white">
-          <h1 className="text-6xl ">G502 HERO WIRELESS</h1>
-          <h3 className="text-2xl text-secondary">
-            Logitech's High Performance Wireless Gaming Mouse
+          <h1 className="text-5xl ">G502 HERO WIRELESS</h1>
+          <h3 className="text-2xl text-gray-500">
+            {`Logitech 's`} High Performance Wireless Gaming Mouse
           </h3>
           <p>
             The Razer Ourabarose is outfitted with the mosr advenced and
@@ -30,12 +30,12 @@ const Hero = () => {
             <Image
               src="/G502.png"
               alt=""
-              width={400}
+              width={370}
               height={400}
               className="z-20 relative"
             />
           </div>
-          <h1 className="text-9xl font-black text-primary z-0 absolute -right-20 rotate-90 top-1/2">
+          <h1 className="text-9xl font-black text-primary z-0 absolute -right-8 rotate-90 top-1/2">
             G502
           </h1>
         </div>
