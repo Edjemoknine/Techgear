@@ -5,10 +5,10 @@ import { Button } from "../ui/button";
 const Hero = () => {
   return (
     <div className="max-w-6xl mx-auto px-8 min-h-screen grid place-items-center ">
-      <div className="grid md:grid-cols-2 gap-6 grid-cols-1 pt-24">
+      <div className="grid md:grid-cols-2 gap-4 grid-cols-1 pt-24">
         <div className="flex flex-col gap-6 items-start justify-center text-white">
-          <h1 className="text-5xl ">G502 HERO WIRELESS</h1>
-          <h3 className="text-2xl text-gray-500">
+          <h1 className="text-5xl font-bold ">G502 HERO WIRELESS</h1>
+          <h3 className="text-3xl text-gray-500">
             {`Logitech 's`} High Performance Wireless Gaming Mouse
           </h3>
           <p>
@@ -25,14 +25,14 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative ">
           <div>
             <Image
               src="/G502.png"
               alt=""
-              width={370}
+              width={350}
               height={400}
-              className="z-20 relative"
+              className="z-20 relative md:-right-6"
             />
           </div>
           <h1 className="text-9xl font-black text-primary z-0 absolute -right-8 rotate-90 top-1/2">

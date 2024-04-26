@@ -39,7 +39,7 @@ const Services = () => {
       <HeadTitle
         title="SERVICES"
         link="/services"
-        description="We proved more then high-techproducts!"
+        description="We proved more then high-tech products!"
       />
       <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
         {servicesList.map((service) => (
