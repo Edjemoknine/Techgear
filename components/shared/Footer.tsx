@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <div className="max-w-6xl mx-auto min-h-screen flex items-center justify-center bg-black">
+    <div className="max-w-7xl mx-auto px-4 min-h-scree py-10 flex items-center justify-center bg-black">
       <div className=" w-full px-4 text-white flex flex-col">
         <div className="w-full text-7xl font-bold">
           <h1 className="w-full md:w-2/3">How can we help you. get in touch</h1>
