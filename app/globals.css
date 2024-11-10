@@ -7,7 +7,7 @@
   background: gray;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: #2563eb;
   border-radius: 50px;
 }
 @layer base {

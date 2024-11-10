@@ -2,7 +2,7 @@ import React from "react";
 import HeadTitle from "./HeadTitle";
 import ProductCard from "./ProductCard";
 
-const products = [
+export const products = [
   { image: "/fire.png", title: "Gaming" },
   { image: "/G502.png", title: "Graphic Design" },
   { image: "/Turbo.png", title: "Office & Others" },

@@ -9,7 +9,7 @@ const links = [
   { lebl: "HOME", href: "/" },
   { lebl: "PRODUCTS", href: "/products" },
   { lebl: "SERVICES", href: "/services" },
-  { lebl: "CONTACTS", href: "/contacts" },
+  { lebl: "CONTACTS", href: "/contact" },
 ];
 const Navbar = () => {
   const pathname = usePathname();
@@ -22,7 +22,7 @@ const Navbar = () => {
           {links.map((link) => (
             <Link
               className={cn(
-                "text-gray-500 hover:text-primary duration-300",
+                "text-gray-500 hover:text-primary duration-300 text-sm",
                 pathname === link.href
                   ? "text-primary border-b pb-1 border-primary"
                   : ""
@@ -35,7 +35,7 @@ const Navbar = () => {
           ))}
           <Button
             variant="outline"
-            className="text-white bg-transparent hover:bg-primary"
+            className="text-white rounded-lg bg-transparent hover:bg-primary hover:border-black"
           >
             <Link href={"/sign"}>SIGN IN</Link>
           </Button>
