@@ -67,7 +67,7 @@ export default function Component() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <Card key={index} className="bg-zinc-900 border-zinc-800">
+            <Card key={index} className="bg-gray-900 border-zinc-800">
               <CardContent className="p-6">
                 <service.icon className="h-12 w-12 mb-4 text-blue-600" />
                 <h3 className="text-xl font-bold mb-2 text-white">

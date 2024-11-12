@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <div className="max-w-6xl mx-auto px-8 min-h-screen grid place-items-center ">
+    <div className="max-w-7xl mx-auto px-8 min-h-screen grid place-items-center ">
       <div className="grid md:grid-cols-2 gap-4 grid-cols-1 pt-24">
         <div className="flex flex-col gap-6 items-start justify-center text-white">
           <h1 className="text-5xl font-bold ">G502 HERO WIRELESS</h1>

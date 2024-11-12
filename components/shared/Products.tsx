@@ -9,7 +9,7 @@ export const products = [
 ];
 const Products = () => {
   return (
-    <div className="max-w-6xl mx-auto px-8 min-h-screen grid place-items-center">
+    <div className="max-w-7xl mx-auto px-8 min-h-screen grid place-items-center">
       <HeadTitle
         title="PRODUCTS"
         description="which type of gear are you looking for?"

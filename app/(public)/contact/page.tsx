@@ -20,7 +20,7 @@ export default function Component() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-gray-900 border-zinc-800">
             <CardContent className="p-6">
               <h2 className="text-2xl font-bold mb-6 text-white">
                 Send Us a Message
@@ -31,7 +31,7 @@ export default function Component() {
                   <Input
                     id="name"
                     placeholder="Your name"
-                    className="bg-zinc-800 border-zinc-700"
+                    className="bg-gray-800 border-gray-700"
                   />
                 </div>
                 <div className="grid gap-2 text-white">
@@ -40,7 +40,7 @@ export default function Component() {
                     id="email"
                     placeholder="Your email"
                     type="email"
-                    className="bg-zinc-800 border-zinc-700"
+                    className="bg-gray-800 border-gray-700"
                   />
                 </div>
                 <div className="grid gap-2 text-white">
@@ -48,7 +48,7 @@ export default function Component() {
                   <Input
                     id="subject"
                     placeholder="Message subject"
-                    className="bg-zinc-800 border-zinc-700"
+                    className="bg-gray-800 border-gray-700"
                   />
                 </div>
                 <div className="grid gap-2 text-white">
@@ -56,7 +56,7 @@ export default function Component() {
                   <Textarea
                     id="message"
                     placeholder="Your message"
-                    className="min-h-[150px] bg-zinc-800 border-zinc-700"
+                    className="min-h-[150px] bg-gray-800 border-gray-700"
                   />
                 </div>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
@@ -67,7 +67,7 @@ export default function Component() {
           </Card>
 
           <div className="space-y-8">
-            <Card className="bg-zinc-900 border-zinc-800">
+            <Card className="bg-gray-900 border-zinc-800">
               <CardContent className="p-6">
                 <h2 className="text-2xl font-bold mb-6 text-white">
                   Contact Information
@@ -111,7 +111,7 @@ export default function Component() {
               </CardContent>
             </Card>
 
-            <Card className="bg-zinc-900 border-zinc-800">
+            <Card className="bg-gray-900 border-zinc-800">
               <CardContent className="p-6">
                 <h2 className="text-2xl font-bold mb-4 text-white">FAQ</h2>
                 <div className="space-y-4">

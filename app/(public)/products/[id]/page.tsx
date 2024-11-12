@@ -102,7 +102,7 @@ export default function Component() {
               </div>
               <div className="flex items-center gap-4 mb-6">
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   size="icon"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="rounded-full"
@@ -111,7 +111,7 @@ export default function Component() {
                 </Button>
                 <span className="text-xl font-semibold">{quantity}</span>
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   size="icon"
                   onClick={() => setQuantity(quantity + 1)}
                   className="rounded-full"
@@ -123,24 +123,24 @@ export default function Component() {
                 <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
                   Add to Cart
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button variant="secondary" size="icon">
                   <Heart className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button variant="secondary" size="icon">
                   <Share2 className="h-4 w-4" />
                 </Button>
               </div>
             </div>
-            <Card className="bg-zinc-900 border-zinc-800">
+            <Card className="bg-gray-900 border-zinc-800">
               <CardContent className="p-6">
-                <h2 className="text-xl font-bold mb-4">
+                <h2 className="text-xl font-bold mb-4 text-white">
                   Product Specifications
                 </h2>
                 <div className="grid gap-4">
                   {product.specs.map((spec, index) => (
                     <div key={index} className="grid grid-cols-2">
                       <div className="text-muted-foreground">{spec.name}</div>
-                      <div>{spec.value}</div>
+                      <div className="text-gray-200">{spec.value}</div>
                     </div>
                   ))}
                 </div>
@@ -149,11 +149,11 @@ export default function Component() {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-28">
           <h2 className="text-3xl font-bold mb-8">You May Also Like</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {suggestedProducts.map((product) => (
-              <Card key={product.id} className="bg-zinc-900 border-zinc-800">
+              <Card key={product.id} className="bg-gray-900 border-zinc-800">
                 <CardContent className="p-4">
                   <img
                     alt={product.name}
@@ -162,10 +162,10 @@ export default function Component() {
                     src={product.image}
                     width="400"
                   />
-                  <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                  <p className="text-muted-foreground mb-2">
-                    {product.description}
-                  </p>
+                  <h3 className="text-xl font-bold mb-2 text-white truncate">
+                    {product.name}
+                  </h3>
+
                   <div className="text-lg font-bold text-blue-600">
                     ${product.price.toFixed(2)}
                   </div>

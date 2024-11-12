@@ -30,7 +30,7 @@ export default function Component() {
                 Learn More
               </Button>
             </div>
-            <Card className="bg-zinc-900 border-zinc-800">
+            <Card className="bg-gray-900 border-zinc-800">
               <CardContent className="p-6">
                 <img
                   alt="Gaming Setup"
@@ -43,8 +43,8 @@ export default function Component() {
             </Card>
           </section>
 
-          <section className="grid gap-8">
-            <h2 className="text-3xl font-bold text-center">
+          <section className="grid gap-8 mt-10">
+            <h2 className="text-3xl font-bold text-center mb-6">
               Why Choose TechGear
             </h2>
             <div className="grid md:grid-cols-4 gap-8">
@@ -73,10 +73,12 @@ export default function Component() {
                   description: "24/7 technical support and customer service",
                 },
               ].map((feature, index) => (
-                <Card key={index} className="bg-zinc-900 border-zinc-800">
+                <Card key={index} className="bg-gray-900 border-zinc-800">
                   <CardContent className="p-6">
                     <feature.icon className="h-12 w-12 mb-4 text-blue-600" />
-                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 text-white">
+                      {feature.title}
+                    </h3>
                     <p className="text-muted-foreground">
                       {feature.description}
                     </p>
@@ -86,7 +88,7 @@ export default function Component() {
             </div>
           </section>
 
-          <section className="text-center">
+          <section className="text-center mt-10">
             <h2 className="text-3xl font-bold mb-8">Our Numbers</h2>
             <div className="grid md:grid-cols-4 gap-8">
               {[

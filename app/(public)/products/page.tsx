@@ -42,66 +42,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import { products } from "@/constant/data";
 import { Heart, Search, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 
 // Fake product data
-const products = [
-  {
-    id: 1,
-    name: "G502 HERO Wireless",
-    category: "Gaming",
-    price: 99.99,
-    image: "/fire.png",
-    description: "High Performance Gaming Mouse",
-    brand: "Logitech",
-  },
-  {
-    id: 2,
-    name: "Pro Mechanical Keyboard",
-    category: "Gaming",
-    price: 149.99,
-    image: "/G502.png",
-    description: "RGB Mechanical Gaming Keyboard",
-    brand: "Razer",
-  },
-  {
-    id: 3,
-    name: "Studio Headphones",
-    category: "Professional",
-    price: 199.99,
-    image: "/Turbo.png",
-    description: "Professional Studio Headphones",
-    brand: "Audio-Technica",
-  },
-  {
-    id: 4,
-    name: "4K Gaming Monitor",
-    category: "Gaming",
-    price: 399.99,
-    image: "/fire.png",
-    description: "27-inch 4K HDR Gaming Monitor",
-    brand: "ASUS",
-  },
-  {
-    id: 5,
-    name: "Ergonomic Office Chair",
-    category: "Professional",
-    price: 299.99,
-    image: "/Turbo.png",
-    description: "Comfortable Ergonomic Office Chair",
-    brand: "Herman Miller",
-  },
-  {
-    id: 6,
-    name: "Wireless Gaming Headset",
-    category: "Gaming",
-    price: 129.99,
-    image: "/G502.png",
-    description: "Low-latency Wireless Gaming Headset",
-    brand: "SteelSeries",
-  },
-];
 
 export default function Component() {
   const [search, setSearch] = useState("");
@@ -140,7 +85,7 @@ export default function Component() {
           <div className="relative flex-grow max-w-md">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              className="pl-8 bg-zinc-900 border-zinc-800 w-full"
+              className="pl-8 bg-gray-900 border-zinc-800 w-full"
               placeholder="Search products..."
               type="search"
               value={search}
@@ -148,7 +93,7 @@ export default function Component() {
             />
           </div>
           <Select value={category} onValueChange={setCategory}>
-            <SelectTrigger className="bg-zinc-900 border-zinc-800 w-[180px]">
+            <SelectTrigger className="bg-gray-900 border-zinc-800 w-[180px]">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
@@ -162,7 +107,7 @@ export default function Component() {
           </Select>
           <Button
             variant="outline"
-            className="bg-zinc-900 border-zinc-800"
+            className="bg-gray-900 border-zinc-800"
             onClick={() => setShowFilters(!showFilters)}
           >
             <SlidersHorizontal className="mr-2 h-4 w-4" />
@@ -174,7 +119,7 @@ export default function Component() {
           <div
             className={`lg:col-span-1 ${
               showFilters ? "block" : "hidden lg:block"
-            } space-y-6 bg-zinc-900 p-6 rounded-lg`}
+            } space-y-6 bg-gray-900 p-6 rounded-lg`}
           >
             <div>
               <h3 className="text-lg font-semibold mb-4">Price Range</h3>
@@ -213,7 +158,7 @@ export default function Component() {
           </div>
           <div className="lg:col-span-3 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product) => (
-              <Card key={product.id} className="bg-zinc-900 border-zinc-800">
+              <Card key={product.id} className="bg-gray-900 border-zinc-800">
                 <CardContent className="p-4">
                   <img
                     alt={product.name}

@@ -25,7 +25,7 @@ import {
   Edit,
   Truck,
 } from "lucide-react";
-
+import { products } from "@/constant/data";
 export default function Component() {
   const [activeTab, setActiveTab] = useState("orders");
 
@@ -91,7 +91,7 @@ export default function Component() {
           <header className="border-b border-gray-800 bg-black/50 backdrop-blur-lg sticky top-0 z-10">
             <div className="container flex h-16 items-center justify-between">
               <h1 className="text-xl font-bold">My Account</h1>
-              <Button variant="outline" className="border-gray-700">
+              <Button variant="secondary" className="border-gray-700">
                 <Settings className="h-4 w-4 mr-2" />
                 Account Settings
               </Button>
@@ -100,11 +100,13 @@ export default function Component() {
 
           <div className="container py-8">
             <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="mb-8">
+              {/*
+             <TabsList className="mb-8">
                 <TabsTrigger value="orders">Orders</TabsTrigger>
                 <TabsTrigger value="wishlist">Wishlist</TabsTrigger>
                 <TabsTrigger value="profile">Profile</TabsTrigger>
               </TabsList>
+             */}
 
               {/* Orders Tab */}
               <TabsContent value="orders">
@@ -113,44 +115,57 @@ export default function Component() {
                     <CardHeader className="flex flex-row items-center justify-between">
                       <div>
                         <p className="text-sm text-gray-400">Order #1234</p>
-                        <h3 className="font-semibold">Arriving Tomorrow</h3>
+                        <h3 className="font-semibold text-blue-500">
+                          Arriving Tomorrow
+                        </h3>
                       </div>
                       <Button variant="outline" className="border-gray-700">
                         Track Order
                       </Button>
                     </CardHeader>
                     <CardContent>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-4">
-                          <div className="relative w-16 h-16">
-                            <Image
-                              src="/placeholder.svg?height=64&width=64"
-                              alt="G502 Mouse"
-                              fill
-                              className="object-cover rounded-lg"
-                            />
+                      {products.slice(2).map((order) => (
+                        <div
+                          className="space-y-4 border-b border-gray-800 py-4 last:border-b-0"
+                          key={order.id}
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="relative w-16 h-16">
+                              <Image
+                                src={order.image}
+                                alt="G502 Mouse"
+                                fill
+                                className="object-contain rounded-lg"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-semibold text-white">
+                                {order.name}
+                              </h4>
+                              <p className="text-sm text-gray-400">
+                                Quantity: 1
+                              </p>
+                            </div>
+                            <div className="text-right">
+                              <p className="font-semibold text-white">$99.99</p>
+                              <p className="text-sm text-gray-400">
+                                Processing
+                              </p>
+                            </div>
                           </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold">
-                              G502 HERO WIRELESS
-                            </h4>
-                            <p className="text-sm text-gray-400">Quantity: 1</p>
-                          </div>
-                          <div className="text-right">
-                            <p className="font-semibold">$99.99</p>
-                            <p className="text-sm text-gray-400">Processing</p>
+                          <div className="flex items-center justify-between text-sm">
+                            <div className="flex items-center space-x-2">
+                              <Truck className="h-4 w-4 text-blue-500" />
+                              <span className="text-gray-400">
+                                Estimated delivery: Jan 12, 2024
+                              </span>
+                            </div>
+                            <Button variant="link" className="text-blue-500">
+                              View Details
+                            </Button>
                           </div>
                         </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <div className="flex items-center space-x-2">
-                            <Truck className="h-4 w-4 text-blue-500" />
-                            <span>Estimated delivery: Jan 12, 2024</span>
-                          </div>
-                          <Button variant="link" className="text-blue-500">
-                            View Details
-                          </Button>
-                        </div>
-                      </div>
+                      ))}
                     </CardContent>
                   </Card>
 
@@ -160,22 +175,22 @@ export default function Component() {
                     <Card className="bg-gray-900 border-gray-800">
                       <CardContent className="p-6">
                         <div className="space-y-4">
-                          {[1, 2].map((order) => (
+                          {products.map((order) => (
                             <div
-                              key={order}
+                              key={order.id}
                               className="flex items-center gap-4"
                             >
                               <div className="relative w-16 h-16">
                                 <Image
-                                  src="/placeholder.svg?height=64&width=64"
+                                  src={order.image}
                                   alt="Product Image"
                                   fill
-                                  className="object-cover rounded-lg"
+                                  className="object-contain rounded-lg"
                                 />
                               </div>
                               <div className="flex-1">
-                                <h4 className="font-semibold">
-                                  Gaming Headset Pro
+                                <h4 className="font-semibold text-white">
+                                  {order.name}
                                 </h4>
                                 <p className="text-sm text-gray-400">
                                   Delivered on Dec 15, 2023
@@ -199,30 +214,34 @@ export default function Component() {
               {/* Wishlist Tab */}
               <TabsContent value="wishlist">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[1, 2, 3].map((item) => (
-                    <Card key={item} className="bg-gray-900 border-gray-800">
+                  {products.map((item) => (
+                    <Card key={item.id} className="bg-gray-900 border-gray-800">
                       <CardContent className="p-6">
                         <div className="relative w-full aspect-square mb-4">
                           <Image
-                            src="/placeholder.svg?height=300&width=300"
+                            src={item.image}
                             alt="Wishlist Item"
                             fill
-                            className="object-cover rounded-lg"
+                            className="object-contain rounded-lg"
                           />
                           <Button
                             size="icon"
-                            variant="outline"
+                            variant="secondary"
                             className="absolute top-2 right-2 bg-black/50 border-gray-700"
                           >
-                            <Heart className="h-4 w-4 fill-current" />
+                            <Heart className="h-5 w-5 fill-red-500" />
                           </Button>
                         </div>
-                        <h4 className="font-semibold">Mechanical Keyboard</h4>
+                        <h4 className="font-semibold text-white">
+                          {item.name}
+                        </h4>
                         <p className="text-sm text-gray-400 mb-4">
-                          Premium Gaming Keyboard
+                          {item.category}
                         </p>
                         <div className="flex items-center justify-between">
-                          <span className="font-bold">$149.99</span>
+                          <span className="font-bold text-white">
+                            ${item.price}
+                          </span>
                           <Button variant="default">Add to Cart</Button>
                         </div>
                       </CardContent>
@@ -233,10 +252,12 @@ export default function Component() {
 
               {/* Profile Tab */}
               <TabsContent value="profile">
-                <div className="grid gap-8 max-w-2xl">
+                <div className="grid gap-8 max-w-2xl ">
                   <Card className="bg-gray-900 border-gray-800">
-                    <CardHeader className="flex flex-row items-center justify-between">
-                      <h3 className="font-semibold">Personal Information</h3>
+                    <CardHeader className="flex flex-row items-center justify-between ">
+                      <h3 className="font-semibold text-white">
+                        Personal Information
+                      </h3>
                       <Button variant="outline" className="border-gray-700">
                         <Edit className="h-4 w-4 mr-2" />
                         Edit
@@ -246,20 +267,20 @@ export default function Component() {
                       <div className="flex items-center gap-4">
                         <div className="relative w-20 h-20">
                           <Image
-                            src="/placeholder.svg?height=80&width=80"
+                            src="/avatar.webp"
                             alt="Profile Picture"
                             fill
                             className="object-cover rounded-full"
                           />
                         </div>
                         <div>
-                          <h4 className="font-semibold">John Doe</h4>
+                          <h4 className="font-semibold text-white">John Doe</h4>
                           <p className="text-sm text-gray-400">
                             Member since 2023
                           </p>
                         </div>
                       </div>
-                      <div className="grid gap-4">
+                      <div className="grid gap-4 text-white">
                         <div className="space-y-2">
                           <Label htmlFor="email">Email</Label>
                           <Input
@@ -282,9 +303,11 @@ export default function Component() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-gray-900 border-gray-800">
+                  <Card className="bg-gray-900 border-gray-800 ">
                     <CardHeader>
-                      <h3 className="font-semibold">Shipping Address</h3>
+                      <h3 className="font-semibold text-white">
+                        Shipping Address
+                      </h3>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
@@ -292,13 +315,13 @@ export default function Component() {
                           <div className="flex items-center gap-4">
                             <Home className="h-5 w-5 text-gray-400" />
                             <div>
-                              <p className="font-semibold">Home</p>
-                              <p className="text-sm text-gray-400">
+                              <p className="font-semibold text-white">Home</p>
+                              <p className="text-sm text-gray-400 ">
                                 123 Gaming Street, Esports City, GG 12345
                               </p>
                             </div>
                           </div>
-                          <Button variant="ghost">Edit</Button>
+                          <Button variant="secondary">Edit</Button>
                         </div>
                         <Button
                           variant="outline"
@@ -312,7 +335,9 @@ export default function Component() {
 
                   <Card className="bg-gray-900 border-gray-800">
                     <CardHeader>
-                      <h3 className="font-semibold">Payment Methods</h3>
+                      <h3 className="font-semibold text-white">
+                        Payment Methods
+                      </h3>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
@@ -320,7 +345,7 @@ export default function Component() {
                           <div className="flex items-center gap-4">
                             <CreditCard className="h-5 w-5 text-gray-400" />
                             <div>
-                              <p className="font-semibold">
+                              <p className="font-semibold text-white">
                                 •••• •••• •••• 4242
                               </p>
                               <p className="text-sm text-gray-400">
@@ -328,7 +353,7 @@ export default function Component() {
                               </p>
                             </div>
                           </div>
-                          <Button variant="ghost">Edit</Button>
+                          <Button variant="secondary">Edit</Button>
                         </div>
                         <Button
                           variant="outline"
