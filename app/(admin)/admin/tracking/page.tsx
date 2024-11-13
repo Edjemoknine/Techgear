@@ -105,7 +105,7 @@ export default function Tracking() {
       <div className="flex h-[calc(100vh-2rem)] gap-6 mb-40">
         {/* Sidebar */}
         <div className="w-96 flex flex-col gap-4">
-          <Card className="bg-gray-900 border-none text-white">
+          <Card className="bg-gray-50 dark:bg-gray-900  ">
             <CardContent className="p-4">
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -121,7 +121,7 @@ export default function Tracking() {
             {deliveries.map((delivery) => (
               <Card
                 key={delivery.id}
-                className={`mb-4 cursor-pointer transition-colors hover:bg-gray-800/50 bg-gray-900 border-none text-white ${
+                className={`mb-4 cursor-pointer transition-colors hover:bg-gray-800/50 bg-gray-50 dark:bg-gray-900   ${
                   selectedDelivery.id === delivery.id ? "border-primary" : ""
                 }`}
                 onClick={() => setSelectedDelivery(delivery)}
@@ -176,7 +176,7 @@ export default function Tracking() {
 
         {/* Main Content */}
         <div className="flex-1 flex flex-col gap-4 ">
-          <Card className="bg-gray-900 border-none text-white">
+          <Card className="bg-gray-50 dark:bg-gray-900  ">
             <CardHeader>
               <div className="flex justify-between items-center">
                 <div>

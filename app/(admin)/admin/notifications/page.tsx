@@ -47,7 +47,7 @@ export default function Messages() {
       </div>
 
       <div className="grid grid-cols-3 gap-6">
-        <Card className="col-span-1 bg-gray-900 border-none text-white">
+        <Card className="col-span-1 dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Conversations</CardTitle>
           </CardHeader>
@@ -60,7 +60,7 @@ export default function Messages() {
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className="flex items-center space-x-4 p-2 hover:bg-gray-800 rounded cursor-pointer"
+                  className="flex items-center space-x-4 p-2 hover:dark:bg-gray-800 rounded cursor-pointer"
                 >
                   <Avatar>
                     <AvatarImage
@@ -88,7 +88,7 @@ export default function Messages() {
           </CardContent>
         </Card>
 
-        <Card className="col-span-2 bg-gray-900 border-none text-white">
+        <Card className="col-span-2 dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Message Thread</CardTitle>
           </CardHeader>

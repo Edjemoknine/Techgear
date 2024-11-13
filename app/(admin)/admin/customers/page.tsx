@@ -59,7 +59,7 @@ export default function Customers() {
         <Button>Add New Customer</Button>
       </div>
 
-      <Card className="bg-gray-900 mb-6 border-none">
+      <Card className="bg-gray-50 dark:bg-gray-900 mb-6 ">
         <CardContent className="p-6">
           <div className="flex space-x-4">
             <Input
@@ -71,14 +71,14 @@ export default function Customers() {
         </CardContent>
       </Card>
 
-      <Card className="bg-gray-900 border-none">
+      <Card className="bg-gray-50 dark:bg-gray-900 ">
         <CardHeader>
-          <CardTitle className="text-white">Customer List</CardTitle>
+          <CardTitle className="">Customer List</CardTitle>
         </CardHeader>
-        <CardContent className="bg-gray-900 text-white border-none">
+        <CardContent className="bg-gray-50 dark:bg-gray-900  ">
           <Table>
             <TableHeader>
-              <TableRow className="border-none">
+              <TableRow className="">
                 <TableHead>Name</TableHead>
                 <TableHead>Email</TableHead>
                 <TableHead>Orders</TableHead>
@@ -88,7 +88,7 @@ export default function Customers() {
             </TableHeader>
             <TableBody>
               {customers.map((customer) => (
-                <TableRow key={customer.id} className="border-none">
+                <TableRow key={customer.id} className="">
                   <TableCell className="flex items-center space-x-2">
                     <Avatar>
                       <AvatarImage

@@ -54,7 +54,7 @@ export default function Dashboard() {
     <>
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 ">
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
             <svg
@@ -77,7 +77,7 @@ export default function Dashboard() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Subscriptions</CardTitle>
             <svg
@@ -102,7 +102,7 @@ export default function Dashboard() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Sales</CardTitle>
             <svg
@@ -126,7 +126,7 @@ export default function Dashboard() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Now</CardTitle>
             <svg
@@ -151,7 +151,7 @@ export default function Dashboard() {
         </Card>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Sales Overview</CardTitle>
           </CardHeader>
@@ -159,7 +159,7 @@ export default function Dashboard() {
             <Bar data={salesData} />
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Revenue Trend</CardTitle>
           </CardHeader>

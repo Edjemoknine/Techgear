@@ -134,10 +134,10 @@ export default function Analytics() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Analytics Dashboard</h1>
         <Select defaultValue="last7days">
-          <SelectTrigger className="w-[180px] bg-gray-900">
+          <SelectTrigger className="w-[180px] dark:bg-gray-900 bg-gray-50">
             <SelectValue placeholder="Select period" />
           </SelectTrigger>
-          <SelectContent className="bg-gray-900 border-none text-white">
+          <SelectContent className="dark:bg-gray-900 bg-gray-50  ">
             <SelectItem value="last7days">Last 7 days</SelectItem>
             <SelectItem value="last30days">Last 30 days</SelectItem>
             <SelectItem value="last3months">Last 3 months</SelectItem>
@@ -147,7 +147,7 @@ export default function Analytics() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
           </CardHeader>
@@ -158,7 +158,7 @@ export default function Analytics() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Total Expenses
@@ -171,7 +171,7 @@ export default function Analytics() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Orders</CardTitle>
           </CardHeader>
@@ -182,7 +182,7 @@ export default function Analytics() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Total Customers
@@ -196,7 +196,7 @@ export default function Analytics() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Page Views</CardTitle>
           </CardHeader>
@@ -204,7 +204,7 @@ export default function Analytics() {
             <Bar data={pageViews} options={{ responsive: true }} />
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Country Views</CardTitle>
           </CardHeader>
@@ -215,7 +215,7 @@ export default function Analytics() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Trending Products</CardTitle>
           </CardHeader>
@@ -226,7 +226,7 @@ export default function Analytics() {
             />
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 border-none text-white">
+        <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Revenue vs Expenses</CardTitle>
           </CardHeader>
@@ -236,14 +236,14 @@ export default function Analytics() {
         </Card>
       </div>
 
-      <Card className="bg-gray-900 border-none text-white">
+      <Card className="dark:bg-gray-900 bg-gray-50  ">
         <CardHeader>
           <CardTitle>Recent Invoices</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
-              <TableRow className="bg-gray-900 border-none">
+              <TableRow className="dark:bg-gray-900 bg-gray-50 ">
                 <TableHead>Invoice ID</TableHead>
                 <TableHead>Customer</TableHead>
                 <TableHead>Amount</TableHead>
@@ -252,7 +252,10 @@ export default function Analytics() {
             </TableHeader>
             <TableBody>
               {invoices.map((invoice) => (
-                <TableRow key={invoice.id} className="bg-gray-900 border-none">
+                <TableRow
+                  key={invoice.id}
+                  className="dark:bg-gray-900 bg-gray-50 "
+                >
                   <TableCell>{invoice.id}</TableCell>
                   <TableCell>{invoice.customer}</TableCell>
                   <TableCell>{invoice.amount}</TableCell>

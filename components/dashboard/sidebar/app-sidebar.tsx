@@ -2,16 +2,23 @@
 
 import * as React from "react";
 import {
+  BarChart,
   BookOpen,
   Bot,
   Command,
   Frame,
+  Grid,
   LifeBuoy,
   Map,
+  MessageSquareDot,
+  Package,
   PieChart,
   Send,
   Settings2,
+  ShoppingCart,
   SquareTerminal,
+  Truck,
+  Users,
 } from "lucide-react";
 
 import { NavMain } from "@/components/dashboard/sidebar/nav-main";
@@ -34,6 +41,19 @@ const data = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
+  links: [
+    { icon: Grid, title: "Dashboard", url: "/admin" },
+    { icon: Package, title: "Products", url: "/admin/products" },
+    { icon: ShoppingCart, title: "Orders", url: "/admin/orders" },
+    { icon: BarChart, title: "Analytics", url: "/admin/analytics" },
+    {
+      icon: MessageSquareDot,
+      title: "Notifications",
+      url: "/admin/notifications",
+    },
+    { icon: Users, title: "Customers", url: "/admin/customers" },
+    { icon: Truck, title: "Tracking", url: "/admin/tracking" },
+  ],
   navMain: [
     {
       title: "Playground",
@@ -154,7 +174,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar variant="inset" {...props}>
+    <Sidebar variant="sidebar" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -173,9 +193,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <NavMain items={data.links} />
+        {/*<NavProjects projects={data.projects} />*/}
+        {/*<NavSecondary items={data.navSecondary} className="mt-auto" />*/}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
