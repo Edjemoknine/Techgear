@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   ArrowUpDown,
   Download,
@@ -153,7 +153,7 @@ export default function Component() {
   const [searchTerm, setSearchTerm] = useState("");
   const productsPerPage = 10;
 
-  const filterProducts = () => {
+  const filterProducts = useCallback(() => {
     let filteredProducts = allProducts;
 
     if (selectedCategory !== "all") {
@@ -190,7 +190,9 @@ export default function Component() {
         break;
       case "newest":
         filteredProducts.sort(
-          (a, b) => new Date(b.lastModified) - new Date(a.lastModified),
+          (a, b) =>
+            (new Date(b.lastModified) as any) -
+            (new Date(a.lastModified) as any),
         );
         break;
       case "price-asc":
@@ -202,12 +204,19 @@ export default function Component() {
     }
 
     return filteredProducts;
-  };
+  }, [selectedCategory, selectedType, selectedStock, sortBy, searchTerm]);
 
   useEffect(() => {
     setProducts(filterProducts());
     setCurrentPage(1);
-  }, [selectedCategory, selectedType, selectedStock, sortBy, searchTerm]);
+  }, [
+    selectedCategory,
+    selectedType,
+    filterProducts,
+    selectedStock,
+    sortBy,
+    searchTerm,
+  ]);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
