@@ -21,7 +21,7 @@ export default function Component() {
             <div>
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
               <p className="text-muted-foreground mb-6">
-                At TechGear, we're dedicated to providing gamers and
+                At TechGear, we are dedicated to providing gamers and
                 professionals with the highest quality tech equipment. Our
                 commitment to innovation and performance drives everything we
                 do.
