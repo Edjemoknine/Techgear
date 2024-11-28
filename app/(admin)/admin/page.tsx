@@ -25,6 +25,70 @@ ChartJS.register(
   Tooltip,
   Legend,
 );
+import { useState } from "react";
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  Marker,
+} from "react-simple-maps";
+
+import { Button } from "@/components/ui/button";
+import { MoreVertical } from "lucide-react";
+import CustomerDistributionMap from "./components/Map";
+import Map from "./components/CountryMap";
+
+// You'll need to download this file and host it in your public directory
+const geoUrl = "/world-countries.json";
+const data = [
+  {
+    name: "United States",
+    code: "US",
+    latitude: 37.0902,
+    longitude: -95.7129,
+    customers: 12194,
+  },
+  {
+    name: "England",
+    code: "GB",
+    latitude: 52.3555,
+    longitude: -1.1743,
+    customers: 10410,
+  },
+  {
+    name: "Germany",
+    code: "DE",
+    latitude: 51.1657,
+    longitude: 10.4515,
+    customers: 9084,
+  },
+  {
+    name: "Qatar",
+    code: "QA",
+    latitude: 25.3548,
+    longitude: 51.1839,
+    customers: 8824,
+  },
+  {
+    name: "Turkey",
+    code: "TR",
+    latitude: 38.9637,
+    longitude: 35.2433,
+    customers: 7741,
+  },
+];
+const customers = [
+  {
+    country: "United States",
+    coordinates: [-95, 40],
+    count: 12194,
+    flag: "🇺🇸",
+  },
+  { country: "England", coordinates: [0, 52], count: 10410, flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+  { country: "Germany", coordinates: [10, 51], count: 9084, flag: "🇩🇪" },
+  { country: "Qatar", coordinates: [51, 25], count: 8824, flag: "🇶🇦" },
+  { country: "Turkey", coordinates: [35, 39], count: 7741, flag: "🇹🇷" },
+];
 
 export default function Dashboard() {
   const salesData = {
@@ -150,7 +214,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <Card className="dark:bg-gray-900 bg-gray-50  ">
           <CardHeader>
             <CardTitle>Sales Overview</CardTitle>
@@ -168,6 +232,8 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </div>
+      <CustomerDistributionMap />
+      {/*<Map data={data} />*/}
     </>
   );
 }

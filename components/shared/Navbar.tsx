@@ -53,7 +53,7 @@ const Navbar = () => {
             variant="outline"
             className="text-white rounded-lg bg-transparent hover:bg-primary hover:border-black"
           >
-            <Link href={"/sign"}>SIGN IN</Link>
+            <Link href={"/sign-in"}>SIGN IN</Link>
           </Button>
         </nav>
       </div>

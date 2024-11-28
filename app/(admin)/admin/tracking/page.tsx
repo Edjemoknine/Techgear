@@ -64,6 +64,7 @@ const deliveries = [
       [52.525, 13.41],
       [52.53, 13.415],
     ],
+    routes: [52.52, 13.405],
   },
   {
     id: "#456790",
@@ -274,7 +275,7 @@ export default function Tracking() {
                   <Popup>Destination</Popup>
                 </Marker>
                 <Polyline
-                  positions={selectedDelivery.route}
+                  positions={selectedDelivery?.route!}
                   color="#ff4444"
                   weight={3}
                   opacity={0.7}

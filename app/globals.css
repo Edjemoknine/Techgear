@@ -1,7 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
 
+.dark-mode .leaflet-container {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .leaflet-popup-content-wrapper {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .leaflet-popup-tip {
+    background-color: #1a1a1a;
+}
 ::-webkit-scrollbar {
     width: 10px;
     background: gray;
