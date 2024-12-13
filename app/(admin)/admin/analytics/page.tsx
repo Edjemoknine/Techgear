@@ -49,7 +49,7 @@ const pageViews = {
     {
       label: "Page Views",
       data: [1000, 1500, 2000, 2500, 3000, 3500],
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: "#2563eb",
     },
   ],
 };
@@ -82,7 +82,7 @@ const trendingProducts = {
     {
       label: "Sales",
       data: [500, 450, 400, 300, 250],
-      backgroundColor: "rgba(75, 192, 192, 0.6)",
+      backgroundColor: "#2563eb",
     },
   ],
 };
@@ -93,7 +93,7 @@ const revenueData = {
     {
       label: "Revenue",
       data: [50000, 60000, 75000, 85000, 100000, 120000],
-      borderColor: "rgb(75, 192, 192)",
+      borderColor: "#2563eb",
       tension: 0.1,
     },
     {

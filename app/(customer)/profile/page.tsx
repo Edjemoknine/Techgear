@@ -120,7 +120,9 @@ export default function Component() {
                         </h3>
                       </div>
                       <Button variant="outline" className="border-gray-700">
-                        Track Order
+                        <Link href={`/profile/orders/${456789}`}>
+                          Track Order
+                        </Link>
                       </Button>
                     </CardHeader>
                     <CardContent>

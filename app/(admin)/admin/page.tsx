@@ -97,7 +97,7 @@ export default function Dashboard() {
       {
         label: "Sales",
         data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        backgroundColor: "#2563eb",
       },
     ],
   };
@@ -108,7 +108,7 @@ export default function Dashboard() {
       {
         label: "Revenue",
         data: [65, 59, 80, 81, 56, 55],
-        borderColor: "rgb(75, 192, 192)",
+        borderColor: "#2563eb",
         tension: 0.1,
       },
     ],
