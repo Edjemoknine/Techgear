@@ -1,6 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
 .dark-mode {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -21,6 +46,7 @@
 ::-webkit-scrollbar {
     width: 10px;
     background: gray;
+    border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb {
     background: #2563eb;
