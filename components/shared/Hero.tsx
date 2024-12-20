@@ -7,11 +7,13 @@ const Hero = () => {
     <div className="max-w-7xl mx-auto px-8 min-h-screen grid place-items-center ">
       <div className="grid md:grid-cols-2 gap-4 grid-cols-1 pt-24">
         <div className="flex flex-col gap-6 items-start justify-center text-white">
-          <h1 className="text-5xl font-bold ">G502 HERO WIRELESS</h1>
-          <h3 className="text-3xl text-gray-500">
+          <h1 className="text-4xl md:text-5xl font-bold ">
+            G502 HERO WIRELESS
+          </h1>
+          <h3 className="text-2xl md:text-3xl text-gray-500">
             {`Logitech 's`} High Performance Wireless Gaming Mouse
           </h3>
-          <p>
+          <p className="max-w-lg">
             The Razer Ourabarose is outfitted with the mosr advenced and
             confugurable sensor yet, the all new B200dpi 4G laser sansor. it
             track so procesily, you always hit target exactly where you need to{" "}
@@ -25,7 +27,7 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        <div className="relative ">
+        <div className="relative md:flex hidden ">
           <div>
             <Image
               src="/G502.png"
