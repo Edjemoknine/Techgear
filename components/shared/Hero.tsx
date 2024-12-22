@@ -5,15 +5,15 @@ import { Button } from "../ui/button";
 const Hero = () => {
   return (
     <div className="max-w-7xl mx-auto px-8 min-h-screen grid place-items-center ">
-      <div className="grid md:grid-cols-2 gap-4 grid-cols-1 pt-24">
-        <div className="flex flex-col gap-6 items-start justify-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold ">
+      <div className="grid md:grid-cols-2 gap-4 grid-cols-1 md:pt-24 pt-40">
+        <div className="flex flex-col gap-4 md:gap-6 items-start justify-center text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold ">
             G502 HERO WIRELESS
           </h1>
-          <h3 className="text-2xl md:text-3xl text-gray-500">
+          <h3 className="text-lg sm:text-2xl md:text-3xl text-gray-500">
             {`Logitech 's`} High Performance Wireless Gaming Mouse
           </h3>
-          <p className="max-w-lg">
+          <p className="max-w-lg text-sm md:text-base">
             The Razer Ourabarose is outfitted with the mosr advenced and
             confugurable sensor yet, the all new B200dpi 4G laser sansor. it
             track so procesily, you always hit target exactly where you need to{" "}
