@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Monitor, Shield, Users, Zap } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Monitor, Shield, Users, Zap } from 'lucide-react';
 
 export default function Component() {
   return (
@@ -51,26 +51,26 @@ export default function Component() {
               {[
                 {
                   icon: Zap,
-                  title: "High Performance",
+                  title: 'High Performance',
                   description:
-                    "Top-tier gaming equipment designed for professional performance",
+                    'Top-tier gaming equipment designed for professional performance',
                 },
                 {
                   icon: Shield,
-                  title: "Quality Assured",
+                  title: 'Quality Assured',
                   description:
-                    "All products undergo rigorous testing and quality control",
+                    'All products undergo rigorous testing and quality control',
                 },
                 {
                   icon: Users,
-                  title: "Community Driven",
+                  title: 'Community Driven',
                   description:
-                    "Built by gamers, for gamers - community feedback shapes our products",
+                    'Built by gamers, for gamers - community feedback shapes our products',
                 },
                 {
                   icon: Monitor,
-                  title: "Tech Support",
-                  description: "24/7 technical support and customer service",
+                  title: 'Tech Support',
+                  description: '24/7 technical support and customer service',
                 },
               ].map((feature, index) => (
                 <Card key={index} className="bg-gray-900 border-zinc-800">
@@ -92,10 +92,10 @@ export default function Component() {
             <h2 className="text-3xl font-bold mb-8">Our Numbers</h2>
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { number: "10+", label: "Years Experience" },
-                { number: "50K+", label: "Products Sold" },
-                { number: "99%", label: "Customer Satisfaction" },
-                { number: "24/7", label: "Support Available" },
+                { number: '10+', label: 'Years Experience' },
+                { number: '50K+', label: 'Products Sold' },
+                { number: '99%', label: 'Customer Satisfaction' },
+                { number: '24/7', label: 'Support Available' },
               ].map((stat, index) => (
                 <div key={index} className="p-6">
                   <div className="text-4xl font-bold text-blue-600 mb-2">

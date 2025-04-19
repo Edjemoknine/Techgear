@@ -1,5 +1,5 @@
-"use client";
-import { LayoutGrid, LayoutList } from "lucide-react";
+'use client';
+import { LayoutGrid, LayoutList } from 'lucide-react';
 
 type Props = {
   Layout: string;
@@ -13,14 +13,14 @@ const FilterBar = ({ Layout, setLayout }: Props) => {
     <div className="flex justify-between items-center">
       <div></div>
       <div className="flex items-center gap-4 text-gray-400">
-        {Layout === "Grid" ? (
+        {Layout === 'Grid' ? (
           <LayoutList
-            onClick={() => changeLayout("List")}
+            onClick={() => changeLayout('List')}
             className="cursor-pointer"
           />
         ) : (
           <LayoutGrid
-            onClick={() => changeLayout("Grid")}
+            onClick={() => changeLayout('Grid')}
             className="cursor-pointer"
           />
         )}

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Table,
   TableBody,
@@ -8,46 +8,46 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/table';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const customers = [
   {
     id: 1,
-    name: "John Doe",
-    email: "john@example.com",
+    name: 'John Doe',
+    email: 'john@example.com',
     orders: 5,
-    spent: "$499.95",
+    spent: '$499.95',
   },
   {
     id: 2,
-    name: "Jane Smith",
-    email: "jane@example.com",
+    name: 'Jane Smith',
+    email: 'jane@example.com',
     orders: 3,
-    spent: "$299.97",
+    spent: '$299.97',
   },
   {
     id: 3,
-    name: "Bob Johnson",
-    email: "bob@example.com",
+    name: 'Bob Johnson',
+    email: 'bob@example.com',
     orders: 7,
-    spent: "$699.93",
+    spent: '$699.93',
   },
   {
     id: 4,
-    name: "Alice Brown",
-    email: "alice@example.com",
+    name: 'Alice Brown',
+    email: 'alice@example.com',
     orders: 2,
-    spent: "$199.98",
+    spent: '$199.98',
   },
   {
     id: 5,
-    name: "Charlie Davis",
-    email: "charlie@example.com",
+    name: 'Charlie Davis',
+    email: 'charlie@example.com',
     orders: 4,
-    spent: "$399.96",
+    spent: '$399.96',
   },
 ];
 
@@ -96,9 +96,9 @@ export default function Customers() {
                       />
                       <AvatarFallback>
                         {customer.name
-                          .split(" ")
+                          .split(' ')
                           .map((n) => n[0])
-                          .join("")}
+                          .join('')}
                       </AvatarFallback>
                     </Avatar>
                     <span>{customer.name}</span>

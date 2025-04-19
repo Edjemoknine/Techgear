@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 interface OrderDetailsProps {
   order: any;
@@ -39,7 +39,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({ order }) => {
           {order.route.map((stop: any, index: number) => (
             <div key={index} className="flex items-start mb-4">
               <div
-                className={`w-4 h-4 rounded-full mt-1 mr-3 ${stop.completed ? "bg-green-500" : "bg-gray-500"}`}
+                className={`w-4 h-4 rounded-full mt-1 mr-3 ${stop.completed ? 'bg-green-500' : 'bg-gray-500'}`}
               ></div>
               <div>
                 <p className="font-medium">{stop.name}</p>

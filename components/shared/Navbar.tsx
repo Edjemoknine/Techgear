@@ -1,18 +1,18 @@
-"use client";
-import Link from "next/link";
-import React, { useState } from "react";
-import { Button } from "../ui/button";
-import Logo from "./Logo";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Menu, ShoppingCart } from "lucide-react";
-import { useCart } from "@/context/CartContext";
-import MobileNavigation from "./MobileNavigation";
+'use client';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { Button } from '../ui/button';
+import Logo from './Logo';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
+import { Menu, ShoppingCart } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
+import MobileNavigation from './MobileNavigation';
 const links = [
-  { lebl: "HOME", href: "/" },
-  { lebl: "PRODUCTS", href: "/products" },
-  { lebl: "SERVICES", href: "/services" },
-  { lebl: "CONTACTS", href: "/contact" },
+  { lebl: 'HOME', href: '/' },
+  { lebl: 'PRODUCTS', href: '/products' },
+  { lebl: 'SERVICES', href: '/services' },
+  { lebl: 'CONTACTS', href: '/contact' },
 ];
 const Navbar = () => {
   const pathname = usePathname();
@@ -28,10 +28,10 @@ const Navbar = () => {
             {links.map((link) => (
               <Link
                 className={cn(
-                  "text-gray-500 hover:text-primary duration-300 text-sm",
+                  'text-gray-500 hover:text-primary duration-300 text-sm',
                   pathname === link.href
-                    ? "text-primary border-b pb-1 border-primary"
-                    : "",
+                    ? 'text-primary border-b pb-1 border-primary'
+                    : '',
                 )}
                 href={link.href}
                 key={link.href}
@@ -65,7 +65,7 @@ const Navbar = () => {
             variant="outline"
             className="text-white hidden md:block rounded-lg bg-transparent hover:bg-primary hover:border-black"
           >
-            <Link href={"/sign-in"}>SIGN IN</Link>
+            <Link href={'/sign-in'}>SIGN IN</Link>
           </Button>
         </nav>
         <MobileNavigation open={openNav} setOpen={setOpenNav} />

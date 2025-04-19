@@ -1,5 +1,5 @@
-import { ModeToggle } from "@/components/ThemeButton";
-import { AppSidebar } from "@/components/dashboard/sidebar/app-sidebar";
+import { ModeToggle } from '@/components/ThemeButton';
+import { AppSidebar } from '@/components/dashboard/sidebar/app-sidebar';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,13 +7,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
+} from '@/components/ui/breadcrumb';
+import { Separator } from '@/components/ui/separator';
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/sidebar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

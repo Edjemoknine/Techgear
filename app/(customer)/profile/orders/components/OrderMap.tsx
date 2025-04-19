@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import { useEffect, useRef } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 interface OrderMapProps {
   order: any;
@@ -13,16 +13,16 @@ const OrderMap: React.FC<OrderMapProps> = ({ order }) => {
 
   useEffect(() => {
     if (!mapRef.current) {
-      mapRef.current = L.map("map", {
+      mapRef.current = L.map('map', {
         zoomControl: false,
       }).setView(order.currentLocation, 13);
 
       L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
         {
           attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-          subdomains: "abcd",
+          subdomains: 'abcd',
           maxZoom: 20,
         },
       ).addTo(mapRef.current);
@@ -39,21 +39,21 @@ const OrderMap: React.FC<OrderMapProps> = ({ order }) => {
 
     // Custom icons
     const originIcon = L.divIcon({
-      className: "custom-icon",
+      className: 'custom-icon',
       html: '<div class="w-6 h-6 rounded-full bg-green-500 border-2 border-white flex items-center justify-center text-white font-bold">O</div>',
       iconSize: [24, 24],
       iconAnchor: [12, 12],
     });
 
     const destinationIcon = L.divIcon({
-      className: "custom-icon",
+      className: 'custom-icon',
       html: '<div class="w-6 h-6 rounded-full bg-red-500 border-2 border-white flex items-center justify-center text-white font-bold">D</div>',
       iconSize: [24, 24],
       iconAnchor: [12, 12],
     });
 
     const currentLocationIcon = L.divIcon({
-      className: "custom-icon",
+      className: 'custom-icon',
       html: '<div class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center text-white font-bold pulse">C</div>',
       iconSize: [24, 24],
       iconAnchor: [12, 12],
@@ -70,7 +70,7 @@ const OrderMap: React.FC<OrderMapProps> = ({ order }) => {
       ...order.nextStops,
       order.destination,
     ];
-    L.polyline(routeCoordinates, { color: "orange", weight: 3 }).addTo(map);
+    L.polyline(routeCoordinates, { color: 'orange', weight: 3 }).addTo(map);
 
     // Fit bounds
     map.fitBounds(routeCoordinates);

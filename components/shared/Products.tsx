@@ -1,11 +1,11 @@
-import React from "react";
-import HeadTitle from "./HeadTitle";
-import ProductCard from "./ProductCard";
+import React from 'react';
+import HeadTitle from './HeadTitle';
+import ProductCard from './ProductCard';
 
 export const products = [
-  { image: "/fire.png", title: "Gaming" },
-  { image: "/G502.png", title: "Graphic Design" },
-  { image: "/Turbo.png", title: "Office & Others" },
+  { image: '/fire.png', title: 'Gaming' },
+  { image: '/G502.png', title: 'Graphic Design' },
+  { image: '/Turbo.png', title: 'Office & Others' },
 ];
 const Products = () => {
   return (

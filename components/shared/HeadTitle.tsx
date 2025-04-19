@@ -1,6 +1,6 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import React from "react";
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import React from 'react';
 type Props = {
   title: string;
   description: string;

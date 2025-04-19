@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, {
   Dispatch,
   ReactNode,
@@ -6,7 +6,7 @@ import React, {
   createContext,
   useContext,
   useState,
-} from "react";
+} from 'react';
 
 interface CartContextType {
   openCart: boolean;
@@ -35,17 +35,17 @@ const cartContext = createContext<CartContextType>({
 const initialCartItems = [
   {
     id: 1,
-    name: "G502 HERO Wireless Gaming Mouse",
+    name: 'G502 HERO Wireless Gaming Mouse',
     price: 99.99,
     quantity: 1,
-    image: "/Turbo.png",
+    image: '/Turbo.png',
   },
   {
     id: 2,
-    name: "Pro Mechanical Keyboard",
+    name: 'Pro Mechanical Keyboard',
     price: 149.99,
     quantity: 2,
-    image: "/fire.png",
+    image: '/fire.png',
   },
 ];
 const CartProvider = ({ children }: { children: ReactNode }) => {

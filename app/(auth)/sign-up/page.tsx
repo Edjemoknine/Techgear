@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Settings, Zap, Loader2, Github, Mail } from "lucide-react";
-import Link from "next/link";
-import { Checkbox } from "@/components/ui/checkbox";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Settings, Zap, Loader2, Github, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { Checkbox } from '@/components/ui/checkbox';
 
 export default function Component() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -138,7 +138,7 @@ export default function Component() {
                 htmlFor="terms"
                 className="text-sm text-zinc-400 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                I agree to the{" "}
+                I agree to the{' '}
                 <Link href="#" className="text-blue-600 hover:underline">
                   terms and conditions
                 </Link>
@@ -179,7 +179,7 @@ export default function Component() {
             </Button>
           </div>
           <div className="text-center text-sm text-zinc-400">
-            Already have an account?{" "}
+            Already have an account?{' '}
             <Link href="/sign-in" className="text-blue-600 hover:underline">
               Sign in
             </Link>

@@ -1,10 +1,10 @@
-"use client";
-import { Separator } from "@/components/ui/separator";
-import { Heart, LogOut, Package, Settings, User } from "lucide-react";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
+'use client';
+import { Separator } from '@/components/ui/separator';
+import { Heart, LogOut, Package, Settings, User } from 'lucide-react';
+import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
 
 const SideBar = () => {
   const pathname = usePathname();
@@ -20,7 +20,7 @@ const SideBar = () => {
       <nav className="px-4 space-y-2 flex flex-col pt-8">
         <Link href="/profile">
           <Button
-            variant={pathname === "/profile" ? "secondary" : "ghost"}
+            variant={pathname === '/profile' ? 'secondary' : 'ghost'}
             className="w-full justify-start"
           >
             <User className="mr-2 h-4 w-4" />
@@ -29,7 +29,7 @@ const SideBar = () => {
         </Link>
         <Link href="/profile/orders">
           <Button
-            variant={pathname === "/profile/orders" ? "secondary" : "ghost"}
+            variant={pathname === '/profile/orders' ? 'secondary' : 'ghost'}
             className="w-full justify-start"
           >
             <Package className="mr-2 h-4 w-4" />
@@ -41,7 +41,7 @@ const SideBar = () => {
         </Link>
         <Link href="/profile/wishlist">
           <Button
-            variant={pathname === "/profile/wishlist" ? "secondary" : "ghost"}
+            variant={pathname === '/profile/wishlist' ? 'secondary' : 'ghost'}
             className="w-full justify-start"
           >
             <Heart className="mr-2 h-4 w-4" />

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
-import { Shield, Clock, Loader2, Github, Mail } from "lucide-react";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import Link from 'next/link';
+import { Shield, Clock, Loader2, Github, Mail } from 'lucide-react';
 
 const Icons = {
   spinner: Loader2,
@@ -157,7 +157,7 @@ export default function SignIn() {
             </Button>
           </div>
           <div className="text-center text-sm text-zinc-400">
-            Don&apos;t have an account?{" "}
+            Don&apos;t have an account?{' '}
             <Link href="/sign-up" className="text-blue-600 hover:underline">
               Sign up
             </Link>

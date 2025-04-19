@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from 'react';
 import {
   ArrowUpDown,
   Download,
@@ -11,10 +11,10 @@ import {
   Star,
   Tags,
   Trash2,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,8 +22,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/dropdown-menu';
+import { Input } from '@/components/ui/input';
 import {
   Pagination,
   PaginationContent,
@@ -32,14 +32,14 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from '@/components/ui/pagination';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 import {
   Table,
   TableBody,
@@ -47,128 +47,128 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip';
 
 const allProducts = [
   {
     id: 1,
-    name: "Phone 234-M",
-    description: "Tristique sed metus",
-    image: "/placeholder.svg",
-    sku: "12345",
+    name: 'Phone 234-M',
+    description: 'Tristique sed metus',
+    image: '/placeholder.svg',
+    sku: '12345',
     stock: {
-      status: "In Stock",
+      status: 'In Stock',
       quantity: 120,
     },
     price: 280,
-    category: "Electronics",
-    type: "Simple",
-    statistic: "Best Seller",
-    tags: ["Top Rated", "Best Seller", "Phone"],
+    category: 'Electronics',
+    type: 'Simple',
+    statistic: 'Best Seller',
+    tags: ['Top Rated', 'Best Seller', 'Phone'],
     rating: 5,
-    lastModified: "2024-01-20",
+    lastModified: '2024-01-20',
   },
   {
     id: 2,
-    name: "Sport Smart Watches",
-    image: "/placeholder.svg",
-    sku: "RT12345",
+    name: 'Sport Smart Watches',
+    image: '/placeholder.svg',
+    sku: 'RT12345',
     stock: {
-      status: "Low Inventory",
+      status: 'Low Inventory',
       quantity: 3,
     },
     price: 480,
-    category: "Electronics",
-    type: "Variable",
-    statistic: "Top Rated",
+    category: 'Electronics',
+    type: 'Variable',
+    statistic: 'Top Rated',
     tags: [],
     rating: 4,
-    lastModified: "2024-01-19",
+    lastModified: '2024-01-19',
   },
   {
     id: 3,
-    name: "Potato Chips",
-    image: "/placeholder.svg",
-    sku: "12345",
+    name: 'Potato Chips',
+    image: '/placeholder.svg',
+    sku: '12345',
     stock: {
-      status: "Out of Stock",
+      status: 'Out of Stock',
       quantity: 0,
     },
     price: 8.3,
-    category: "Food & Drinks",
-    type: "Grouped",
-    statistic: "New In",
+    category: 'Food & Drinks',
+    type: 'Grouped',
+    statistic: 'New In',
     tags: [],
     rating: 0,
-    lastModified: "2024-01-18",
+    lastModified: '2024-01-18',
   },
   // Add more products here to demonstrate pagination
   ...Array.from({ length: 20 }, (_, i) => ({
     id: i + 4,
     name: `Product ${i + 4}`,
-    image: "/placeholder.svg",
+    image: '/placeholder.svg',
     sku: `SKU${i + 4}`,
     stock: {
-      status: ["In Stock", "Low Inventory", "Out of Stock"][
+      status: ['In Stock', 'Low Inventory', 'Out of Stock'][
         Math.floor(Math.random() * 3)
       ],
       quantity: Math.floor(Math.random() * 100),
     },
     price: Math.floor(Math.random() * 1000) + 1,
-    category: ["Electronics", "Food & Drinks", "Fashion"][
+    category: ['Electronics', 'Food & Drinks', 'Fashion'][
       Math.floor(Math.random() * 3)
     ],
-    type: ["Simple", "Variable", "Grouped"][Math.floor(Math.random() * 3)],
-    statistic: ["Best Seller", "Top Rated", "New In"][
+    type: ['Simple', 'Variable', 'Grouped'][Math.floor(Math.random() * 3)],
+    statistic: ['Best Seller', 'Top Rated', 'New In'][
       Math.floor(Math.random() * 3)
     ],
     tags: [],
     rating: Math.floor(Math.random() * 6),
     lastModified: new Date(Date.now() - Math.floor(Math.random() * 10000000000))
       .toISOString()
-      .split("T")[0],
+      .split('T')[0],
   })),
 ];
 
 const productStats = [
-  { label: "All", count: allProducts.length },
-  { label: "Published", count: Math.floor(allProducts.length * 0.8) },
-  { label: "Drafts", count: Math.floor(allProducts.length * 0.15) },
-  { label: "Trash", count: Math.floor(allProducts.length * 0.05) },
+  { label: 'All', count: allProducts.length },
+  { label: 'Published', count: Math.floor(allProducts.length * 0.8) },
+  { label: 'Drafts', count: Math.floor(allProducts.length * 0.15) },
+  { label: 'Trash', count: Math.floor(allProducts.length * 0.05) },
 ];
 
 export default function Component() {
   const [products, setProducts] = useState(allProducts);
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedType, setSelectedType] = useState("all");
-  const [selectedStock, setSelectedStock] = useState("all");
-  const [sortBy, setSortBy] = useState("best-seller");
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedType, setSelectedType] = useState('all');
+  const [selectedStock, setSelectedStock] = useState('all');
+  const [sortBy, setSortBy] = useState('best-seller');
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const productsPerPage = 10;
 
   const filterProducts = useCallback(() => {
     let filteredProducts = allProducts;
 
-    if (selectedCategory !== "all") {
+    if (selectedCategory !== 'all') {
       filteredProducts = filteredProducts.filter(
         (product) => product.category === selectedCategory,
       );
     }
 
-    if (selectedType !== "all") {
+    if (selectedType !== 'all') {
       filteredProducts = filteredProducts.filter(
         (product) => product.type === selectedType,
       );
     }
 
-    if (selectedStock !== "all") {
+    if (selectedStock !== 'all') {
       filteredProducts = filteredProducts.filter(
         (product) => product.stock.status === selectedStock,
       );
@@ -183,22 +183,22 @@ export default function Component() {
     }
 
     switch (sortBy) {
-      case "best-seller":
+      case 'best-seller':
         filteredProducts.sort((a, b) =>
-          a.statistic === "Best Seller" ? -1 : 1,
+          a.statistic === 'Best Seller' ? -1 : 1,
         );
         break;
-      case "newest":
+      case 'newest':
         filteredProducts.sort(
           (a, b) =>
             (new Date(b.lastModified) as any) -
             (new Date(a.lastModified) as any),
         );
         break;
-      case "price-asc":
+      case 'price-asc':
         filteredProducts.sort((a, b) => a.price - b.price);
         break;
-      case "price-desc":
+      case 'price-desc':
         filteredProducts.sort((a, b) => b.price - a.price);
         break;
     }
@@ -236,11 +236,11 @@ export default function Component() {
   };
 
   const clearFilters = () => {
-    setSelectedCategory("all");
-    setSelectedType("all");
-    setSelectedStock("all");
-    setSortBy("best-seller");
-    setSearchTerm("");
+    setSelectedCategory('all');
+    setSelectedType('all');
+    setSelectedStock('all');
+    setSortBy('best-seller');
+    setSearchTerm('');
     setProducts(allProducts);
     setCurrentPage(1);
   };
@@ -405,11 +405,11 @@ export default function Component() {
                       <Badge
                         variant="outline"
                         className={
-                          product.stock.status === "In Stock"
-                            ? "border-green-500 bg-green-500/10 text-green-500"
-                            : product.stock.status === "Low Inventory"
-                              ? "border-yellow-500 bg-yellow-500/10 text-yellow-500"
-                              : "border-red-500 bg-red-500/10 text-red-500"
+                          product.stock.status === 'In Stock'
+                            ? 'border-green-500 bg-green-500/10 text-green-500'
+                            : product.stock.status === 'Low Inventory'
+                              ? 'border-yellow-500 bg-yellow-500/10 text-yellow-500'
+                              : 'border-red-500 bg-red-500/10 text-red-500'
                         }
                       >
                         {product.stock.status} ({product.stock.quantity})
@@ -484,7 +484,7 @@ export default function Component() {
                   href="#"
                   onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                   className={
-                    currentPage === 1 ? "pointer-events-none opacity-50" : ""
+                    currentPage === 1 ? 'pointer-events-none opacity-50' : ''
                   }
                 />
               </PaginationItem>
@@ -507,8 +507,8 @@ export default function Component() {
                   }
                   className={
                     currentPage === totalPages
-                      ? "pointer-events-none opacity-50"
-                      : ""
+                      ? 'pointer-events-none opacity-50'
+                      : ''
                   }
                 />
               </PaginationItem>

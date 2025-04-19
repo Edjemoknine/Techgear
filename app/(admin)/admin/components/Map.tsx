@@ -1,33 +1,33 @@
-"use client";
+'use client';
 
-import React, { useState, useCallback } from "react";
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { MoreVertical } from "lucide-react";
-import L from "leaflet";
+import React, { useState, useCallback } from 'react';
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { MoreVertical } from 'lucide-react';
+import L from 'leaflet';
 
 // Import Leaflet CSS
-import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/leaflet.css';
 
 const customers = [
   {
-    country: "United States",
+    country: 'United States',
     coordinates: [40, -95],
     count: 12194,
-    flag: "🇺🇸",
+    flag: '🇺🇸',
   },
-  { country: "England", coordinates: [52, -1], count: 10410, flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-  { country: "Germany", coordinates: [51, 10], count: 9084, flag: "🇩🇪" },
-  { country: "Qatar", coordinates: [25, 51], count: 8824, flag: "🇶🇦" },
-  { country: "Turkey", coordinates: [39, 35], count: 7741, flag: "🇹🇷" },
+  { country: 'England', coordinates: [52, -1], count: 10410, flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+  { country: 'Germany', coordinates: [51, 10], count: 9084, flag: '🇩🇪' },
+  { country: 'Qatar', coordinates: [25, 51], count: 8824, flag: '🇶🇦' },
+  { country: 'Turkey', coordinates: [39, 35], count: 7741, flag: '🇹🇷' },
 ];
 
 // Create a custom marker icon
 const createCustomIcon = (isSelected: boolean) =>
   new L.DivIcon({
-    className: "custom-marker",
-    html: `<div class="w-4 h-4 rounded-full ${isSelected ? "bg-red-500" : "bg-red-400"} border-2 border-white shadow-lg"></div>`,
+    className: 'custom-marker',
+    html: `<div class="w-4 h-4 rounded-full ${isSelected ? 'bg-red-500' : 'bg-red-400'} border-2 border-white shadow-lg"></div>`,
     iconSize: [16, 16],
     iconAnchor: [8, 8],
   });
@@ -59,7 +59,7 @@ export default function CustomerDistributionMap() {
 
   // Custom light style map tiles
   const LIGHT_MAP_TILE =
-    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+    'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
 
   const handleCountryClick = useCallback((country: string) => {
     setSelectedCountry((prev) => (prev === country ? null : country));
@@ -83,7 +83,7 @@ export default function CustomerDistributionMap() {
               <MapContainer
                 center={[30, 0]}
                 zoom={2}
-                style={{ height: "100%", width: "100%" }}
+                style={{ height: '100%', width: '100%' }}
                 zoomControl={false}
                 attributionControl={false}
               >
@@ -118,7 +118,7 @@ export default function CustomerDistributionMap() {
             variant="outline"
             size="sm"
             className={`flex items-center justify-start gap-2 px-3 py-1.5 h-auto dark:bg-gray-900 bg-gray-50
-            ${selectedCountry === customer.country ? "bg-muted" : "bg-white"}`}
+            ${selectedCountry === customer.country ? 'bg-muted' : 'bg-white'}`}
             onClick={() => handleCountryClick(customer.country)}
           >
             <span className="text-base">{customer.flag}</span>

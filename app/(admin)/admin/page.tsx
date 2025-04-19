@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bar, Line } from "react-chartjs-2";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Bar, Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,7 +13,7 @@ import {
   Tooltip,
   Legend,
   PointElement,
-} from "chart.js";
+} from 'chart.js';
 
 ChartJS.register(
   CategoryScale,
@@ -25,53 +25,53 @@ ChartJS.register(
   Tooltip,
   Legend,
 );
-import { useState } from "react";
+import { useState } from 'react';
 import {
   ComposableMap,
   Geographies,
   Geography,
   Marker,
-} from "react-simple-maps";
+} from 'react-simple-maps';
 
-import { Button } from "@/components/ui/button";
-import { MoreVertical } from "lucide-react";
-import CustomerDistributionMap from "./components/Map";
-import Map from "./components/CountryMap";
+import { Button } from '@/components/ui/button';
+import { MoreVertical } from 'lucide-react';
+import CustomerDistributionMap from './components/Map';
+import Map from './components/CountryMap';
 
 // You'll need to download this file and host it in your public directory
-const geoUrl = "/world-countries.json";
+const geoUrl = '/world-countries.json';
 const data = [
   {
-    name: "United States",
-    code: "US",
+    name: 'United States',
+    code: 'US',
     latitude: 37.0902,
     longitude: -95.7129,
     customers: 12194,
   },
   {
-    name: "England",
-    code: "GB",
+    name: 'England',
+    code: 'GB',
     latitude: 52.3555,
     longitude: -1.1743,
     customers: 10410,
   },
   {
-    name: "Germany",
-    code: "DE",
+    name: 'Germany',
+    code: 'DE',
     latitude: 51.1657,
     longitude: 10.4515,
     customers: 9084,
   },
   {
-    name: "Qatar",
-    code: "QA",
+    name: 'Qatar',
+    code: 'QA',
     latitude: 25.3548,
     longitude: 51.1839,
     customers: 8824,
   },
   {
-    name: "Turkey",
-    code: "TR",
+    name: 'Turkey',
+    code: 'TR',
     latitude: 38.9637,
     longitude: 35.2433,
     customers: 7741,
@@ -79,36 +79,36 @@ const data = [
 ];
 const customers = [
   {
-    country: "United States",
+    country: 'United States',
     coordinates: [-95, 40],
     count: 12194,
-    flag: "🇺🇸",
+    flag: '🇺🇸',
   },
-  { country: "England", coordinates: [0, 52], count: 10410, flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-  { country: "Germany", coordinates: [10, 51], count: 9084, flag: "🇩🇪" },
-  { country: "Qatar", coordinates: [51, 25], count: 8824, flag: "🇶🇦" },
-  { country: "Turkey", coordinates: [35, 39], count: 7741, flag: "🇹🇷" },
+  { country: 'England', coordinates: [0, 52], count: 10410, flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+  { country: 'Germany', coordinates: [10, 51], count: 9084, flag: '🇩🇪' },
+  { country: 'Qatar', coordinates: [51, 25], count: 8824, flag: '🇶🇦' },
+  { country: 'Turkey', coordinates: [35, 39], count: 7741, flag: '🇹🇷' },
 ];
 
 export default function Dashboard() {
   const salesData = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     datasets: [
       {
-        label: "Sales",
+        label: 'Sales',
         data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: "#2563eb",
+        backgroundColor: '#2563eb',
       },
     ],
   };
 
   const revenueData = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     datasets: [
       {
-        label: "Revenue",
+        label: 'Revenue',
         data: [65, 59, 80, 81, 56, 55],
-        borderColor: "#2563eb",
+        borderColor: '#2563eb',
         tension: 0.1,
       },
     ],

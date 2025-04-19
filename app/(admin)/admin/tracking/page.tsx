@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   MapContainer,
   TileLayer,
   Marker,
   Popup,
   Polyline,
-} from "react-leaflet";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from 'react-leaflet';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   Search,
   Phone,
@@ -20,36 +20,36 @@ import {
   Clock,
   Package,
   MapPin,
-} from "lucide-react";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+} from 'lucide-react';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
 // Fix for default markers
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon-2x.png",
+    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon-2x.png',
   iconUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon.png",
+    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-icon.png',
   shadowUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png",
+    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
 });
 
 const deliveries = [
   {
-    id: "#456789",
-    from: "London Warehouse",
-    to: "Berlin, DE",
-    status: "ON THE WAY",
+    id: '#456789',
+    from: 'London Warehouse',
+    to: 'Berlin, DE',
+    status: 'ON THE WAY',
     progress: 81,
-    customer: "Sarah Parker",
-    weight: "2.8 kg",
-    price: "$430",
-    departure: "22 July",
+    customer: 'Sarah Parker',
+    weight: '2.8 kg',
+    price: '$430',
+    departure: '22 July',
     driver: {
-      name: "Adam Brady",
-      avatar: "/placeholder.svg",
-      phone: "+1234567890",
+      name: 'Adam Brady',
+      avatar: '/placeholder.svg',
+      phone: '+1234567890',
     },
     currentLocation: {
       lat: 52.52,
@@ -67,19 +67,19 @@ const deliveries = [
     routes: [52.52, 13.405],
   },
   {
-    id: "#456790",
-    from: "Paris Warehouse",
-    to: "Munich, DE",
-    status: "RECEIVED",
+    id: '#456790',
+    from: 'Paris Warehouse',
+    to: 'Munich, DE',
+    status: 'RECEIVED',
     progress: 100,
-    customer: "John Smith",
-    weight: "1.5 kg",
-    price: "$230",
-    departure: "21 July",
+    customer: 'John Smith',
+    weight: '1.5 kg',
+    price: '$230',
+    departure: '21 July',
     driver: {
-      name: "Emma Wilson",
-      avatar: "/placeholder.svg",
-      phone: "+1234567891",
+      name: 'Emma Wilson',
+      avatar: '/placeholder.svg',
+      phone: '+1234567891',
     },
     currentLocation: {
       lat: 52.51,
@@ -123,7 +123,7 @@ export default function Tracking() {
               <Card
                 key={delivery.id}
                 className={`mb-4 cursor-pointer transition-colors hover:bg-gray-800/50 bg-gray-50 dark:bg-gray-900   ${
-                  selectedDelivery.id === delivery.id ? "border-primary" : ""
+                  selectedDelivery.id === delivery.id ? 'border-primary' : ''
                 }`}
                 onClick={() => setSelectedDelivery(delivery)}
               >
@@ -139,16 +139,16 @@ export default function Tracking() {
                     </div>
                     <Badge
                       variant={
-                        delivery.status === "ON THE WAY"
-                          ? "default"
-                          : "secondary"
+                        delivery.status === 'ON THE WAY'
+                          ? 'default'
+                          : 'secondary'
                       }
                     >
                       {delivery.status}
                     </Badge>
                   </div>
 
-                  {delivery.status === "ON THE WAY" && (
+                  {delivery.status === 'ON THE WAY' && (
                     <div className="mb-4">
                       <div className="h-2 bg-muted rounded-full">
                         <div
@@ -188,9 +188,9 @@ export default function Tracking() {
                 </div>
                 <Badge
                   variant={
-                    selectedDelivery.status === "ON THE WAY"
-                      ? "default"
-                      : "secondary"
+                    selectedDelivery.status === 'ON THE WAY'
+                      ? 'default'
+                      : 'secondary'
                   }
                 >
                   {selectedDelivery.status}
@@ -251,7 +251,7 @@ export default function Tracking() {
               <MapContainer
                 center={center}
                 zoom={13}
-                style={{ height: "100%", minHeight: "500px" }}
+                style={{ height: '100%', minHeight: '500px' }}
                 className="rounded-lg"
               >
                 <TileLayer

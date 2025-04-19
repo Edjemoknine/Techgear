@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 import {
   Shield,
@@ -16,7 +16,7 @@ import {
   Gamepad,
   Keyboard,
   MonitorPlay,
-} from "lucide-react";
+} from 'lucide-react';
 
 const Specifications = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,8 +25,8 @@ const Specifications = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
     <section className="py-24 bg-black max-w-7xl mx-auto px-8">
@@ -38,10 +38,10 @@ const Specifications = () => {
             </h2>
             <div className="space-y-4">
               {[
-                "15 programmable controls",
-                "Dual connectivity with lightspeed",
-                "Hero 25K sensor",
-                "Spin. Ratchet. Switch.",
+                '15 programmable controls',
+                'Dual connectivity with lightspeed',
+                'Hero 25K sensor',
+                'Spin. Ratchet. Switch.',
               ].map((spec, index) => (
                 <motion.div
                   key={index}

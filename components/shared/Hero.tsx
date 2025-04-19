@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import { Button } from "../ui/button";
+import Image from 'next/image';
+import React from 'react';
+import { Button } from '../ui/button';
 
 const Hero = () => {
   return (
@@ -16,13 +16,14 @@ const Hero = () => {
           <p className="max-w-lg text-sm md:text-base">
             The Razer Ourabarose is outfitted with the mosr advenced and
             confugurable sensor yet, the all new B200dpi 4G laser sansor. it
-            track so procesily, you always hit target exactly where you need to{" "}
+            track so procesily, you always hit target exactly where you need
+            to{' '}
           </p>
 
           <h2 className="text-primary text-2xl">USD 99,99</h2>
           <div className="flex gap-4 items-center">
             <Button>ADD TO CART</Button>
-            <Button variant={"outline"} className="bg-transparent">
+            <Button variant={'outline'} className="bg-transparent">
               MORE DETAILS
             </Button>
           </div>

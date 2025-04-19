@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Settings } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { Settings } from 'lucide-react';
 const Header = () => {
   return (
     <header className="border-b border-gray-800 bg-black/50 backdrop-blur-lg sticky top-0 z-20">

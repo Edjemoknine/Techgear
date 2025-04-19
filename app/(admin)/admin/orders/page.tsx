@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,11 +14,11 @@ import {
   RefreshCcw,
   Star,
   Upload,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,8 +26,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/dropdown-menu';
+import { Input } from '@/components/ui/input';
 import {
   Pagination,
   PaginationContent,
@@ -36,14 +36,14 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from '@/components/ui/pagination';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 import {
   Table,
   TableBody,
@@ -51,127 +51,127 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 
 // Sample data
 const orders = [
   {
-    id: "#123456",
+    id: '#123456',
     product: {
-      name: "Phone 234-M Grey Color",
-      image: "/placeholder.svg",
+      name: 'Phone 234-M Grey Color',
+      image: '/placeholder.svg',
       price: 800,
       salePrice: 600,
     },
-    sku: "123456TR",
-    category: "Electronics",
+    sku: '123456TR',
+    category: 'Electronics',
     payment: {
       amount: 600,
-      status: "Fully Paid",
+      status: 'Fully Paid',
     },
-    status: "COMPLETED",
+    status: 'COMPLETED',
     rating: 4,
   },
   {
-    id: "#123457",
+    id: '#123457',
     product: {
-      name: "White Jumper",
-      image: "/placeholder.svg",
+      name: 'White Jumper',
+      image: '/placeholder.svg',
       price: 400,
       salePrice: 180,
     },
-    sku: "F34567FR",
-    category: "Fashion",
+    sku: 'F34567FR',
+    category: 'Fashion',
     payment: {
       amount: 180,
-      status: "Partially Paid",
+      status: 'Partially Paid',
     },
-    status: "CONFIRMED",
+    status: 'CONFIRMED',
     rating: 4,
   },
   {
-    id: "#123458",
+    id: '#123458',
     product: {
-      name: "Wireless Earbuds",
-      image: "/placeholder.svg",
+      name: 'Wireless Earbuds',
+      image: '/placeholder.svg',
       price: 150,
       salePrice: 120,
     },
-    sku: "W78901EB",
-    category: "Electronics",
+    sku: 'W78901EB',
+    category: 'Electronics',
     payment: {
       amount: 120,
-      status: "Fully Paid",
+      status: 'Fully Paid',
     },
-    status: "COMPLETED",
+    status: 'COMPLETED',
     rating: 5,
   },
   {
-    id: "#123459",
+    id: '#123459',
     product: {
-      name: "Leather Wallet",
-      image: "/placeholder.svg",
+      name: 'Leather Wallet',
+      image: '/placeholder.svg',
       price: 80,
       salePrice: 60,
     },
-    sku: "L56789WL",
-    category: "Fashion",
+    sku: 'L56789WL',
+    category: 'Fashion',
     payment: {
       amount: 60,
-      status: "Fully Paid",
+      status: 'Fully Paid',
     },
-    status: "CONFIRMED",
+    status: 'CONFIRMED',
     rating: 3,
   },
   {
-    id: "#123460",
+    id: '#123460',
     product: {
-      name: "Smart Watch",
-      image: "/placeholder.svg",
+      name: 'Smart Watch',
+      image: '/placeholder.svg',
       price: 300,
       salePrice: 250,
     },
-    sku: "S12345SW",
-    category: "Electronics",
+    sku: 'S12345SW',
+    category: 'Electronics',
     payment: {
       amount: 250,
-      status: "Fully Paid",
+      status: 'Fully Paid',
     },
-    status: "COMPLETED",
+    status: 'COMPLETED',
     rating: 4,
   },
 ];
 
 const stats = [
   {
-    title: "Orders Completed",
-    value: "2,345",
+    title: 'Orders Completed',
+    value: '2,345',
     icon: Check,
-    color: "text-blue-500",
+    color: 'text-blue-500',
   },
   {
-    title: "Orders Confirmed",
-    value: "323",
+    title: 'Orders Confirmed',
+    value: '323',
     icon: ArrowRight,
-    color: "text-green-500",
+    color: 'text-green-500',
   },
   {
-    title: "Orders Canceled",
-    value: "17",
+    title: 'Orders Canceled',
+    value: '17',
     icon: ArrowLeft,
-    color: "text-red-500",
+    color: 'text-red-500',
   },
   {
-    title: "Orders on Refund",
-    value: "2",
+    title: 'Orders on Refund',
+    value: '2',
     icon: RefreshCcw,
-    color: "text-yellow-500",
+    color: 'text-yellow-500',
   },
 ];
 
 export default function Component() {
-  const [selectedStatus, setSelectedStatus] = useState("all");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedStatus, setSelectedStatus] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const ordersPerPage = 5;
   const totalPages = Math.ceil(orders.length / ordersPerPage);
@@ -321,11 +321,11 @@ export default function Component() {
                       <Badge
                         variant="outline"
                         className={
-                          order.status === "COMPLETED"
-                            ? "border-blue-500 bg-blue-500/10 text-blue-500"
-                            : order.status === "CONFIRMED"
-                              ? "border-green-500 bg-green-500/10 text-green-500"
-                              : "border-red-500 bg-red-500/10 text-red-500"
+                          order.status === 'COMPLETED'
+                            ? 'border-blue-500 bg-blue-500/10 text-blue-500'
+                            : order.status === 'CONFIRMED'
+                              ? 'border-green-500 bg-green-500/10 text-green-500'
+                              : 'border-red-500 bg-red-500/10 text-red-500'
                         }
                       >
                         {order.status}
@@ -338,8 +338,8 @@ export default function Component() {
                             key={i}
                             className={`h-4 w-4 ${
                               i < order.rating
-                                ? "fill-yellow-400 text-yellow-400"
-                                : "text-gray-600"
+                                ? 'fill-yellow-400 text-yellow-400'
+                                : 'text-gray-600'
                             }`}
                           />
                         ))}
@@ -388,7 +388,7 @@ export default function Component() {
                     setCurrentPage((prev) => Math.max(prev - 1, 1))
                   }
                   className={
-                    currentPage === 1 ? "pointer-events-none opacity-50" : ""
+                    currentPage === 1 ? 'pointer-events-none opacity-50' : ''
                   }
                 />
               </PaginationItem>
@@ -411,8 +411,8 @@ export default function Component() {
                   }
                   className={
                     currentPage === totalPages
-                      ? "pointer-events-none opacity-50"
-                      : ""
+                      ? 'pointer-events-none opacity-50'
+                      : ''
                   }
                 />
               </PaginationItem>

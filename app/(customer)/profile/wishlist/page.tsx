@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { products } from "@/constant/data";
-import { Heart } from "lucide-react";
-import Image from "next/image";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { products } from '@/constant/data';
+import { Heart } from 'lucide-react';
+import Image from 'next/image';
 
 const Wishlist = () => {
   return (

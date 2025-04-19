@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import React, { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
 const Map = ({ data }: { data: any }) => {
   const [activeCountry, setActiveCountry] = useState(null);
@@ -12,18 +12,18 @@ const Map = ({ data }: { data: any }) => {
 
   const getCountryColor = (country: any) => {
     switch (country.code) {
-      case "US":
-        return "red";
-      case "GB":
-        return "blue";
-      case "DE":
-        return "green";
-      case "QA":
-        return "yellow";
-      case "TR":
-        return "orange";
+      case 'US':
+        return 'red';
+      case 'GB':
+        return 'blue';
+      case 'DE':
+        return 'green';
+      case 'QA':
+        return 'yellow';
+      case 'TR':
+        return 'orange';
       default:
-        return "gray";
+        return 'gray';
     }
   };
 
@@ -31,7 +31,7 @@ const Map = ({ data }: { data: any }) => {
     return L.icon({
       iconUrl: `https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
       shadowUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
       iconSize: [25, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
@@ -43,7 +43,7 @@ const Map = ({ data }: { data: any }) => {
     <MapContainer
       center={[40, 0]}
       zoom={1}
-      style={{ height: "400px", width: "700px" }}
+      style={{ height: '400px', width: '700px' }}
       className="dark-mode"
     >
       <TileLayer

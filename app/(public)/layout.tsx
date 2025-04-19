@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import { CartSlider } from "@/components/shared/Cart-Slider";
-import CartProvider from "@/context/CartContext";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Navbar from '@/components/shared/Navbar';
+import Footer from '@/components/shared/Footer';
+import { CartSlider } from '@/components/shared/Cart-Slider';
+import CartProvider from '@/context/CartContext';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "TechGear",
-  description: "TechGear E-commerce Platform for Tech and IT supplies",
+  title: 'TechGear',
+  description: 'TechGear E-commerce Platform for Tech and IT supplies',
 };
 
 export default function RootLayout({

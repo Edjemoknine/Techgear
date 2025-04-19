@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import { Dispatch, SetStateAction, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Dispatch, SetStateAction, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { MinusCircle, PlusCircle, ShoppingCart, Trash2 } from "lucide-react";
-import { useCart } from "@/context/CartContext";
-import Logo from "./Logo";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/sheet';
+import { MinusCircle, PlusCircle, ShoppingCart, Trash2 } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
+import Logo from './Logo';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 type Props = {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 };
 const links = [
-  { lebl: "HOME", href: "/" },
-  { lebl: "PRODUCTS", href: "/products" },
-  { lebl: "SERVICES", href: "/services" },
-  { lebl: "CONTACTS", href: "/contact" },
+  { lebl: 'HOME', href: '/' },
+  { lebl: 'PRODUCTS', href: '/products' },
+  { lebl: 'SERVICES', href: '/services' },
+  { lebl: 'CONTACTS', href: '/contact' },
 ];
 const MobileNavigation = ({ open, setOpen }: Props) => {
   const pathname = usePathname();
@@ -40,10 +40,10 @@ const MobileNavigation = ({ open, setOpen }: Props) => {
           {links.map((link) => (
             <Link
               className={cn(
-                "text-gray-500 hover:text-primary duration-300 text-2xl w-full text-center ",
+                'text-gray-500 hover:text-primary duration-300 text-2xl w-full text-center ',
                 pathname === link.href
-                  ? "text-primary border-b-2 pb-1 border-primary"
-                  : "",
+                  ? 'text-primary border-b-2 pb-1 border-primary'
+                  : '',
               )}
               href={link.href}
               key={link.href}
@@ -55,7 +55,7 @@ const MobileNavigation = ({ open, setOpen }: Props) => {
             variant="outline"
             className="!text-white w-full  rounded-lg bg-transparent hover:bg-primary hover:border-black"
           >
-            <Link href={"/sign-in"}>SIGN IN</Link>
+            <Link href={'/sign-in'}>SIGN IN</Link>
           </Button>
         </div>
       </SheetContent>

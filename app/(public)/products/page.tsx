@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
@@ -13,17 +13,17 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import { products } from "@/constant/data";
-import { Heart, Search, SlidersHorizontal } from "lucide-react";
-import { useState } from "react";
+} from '@/components/ui/select';
+import { Slider } from '@/components/ui/slider';
+import { products } from '@/constant/data';
+import { Heart, Search, SlidersHorizontal } from 'lucide-react';
+import { useState } from 'react';
 
 // Fake product data
 
 export default function Component() {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("all");
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('all');
   const [priceRange, setPriceRange] = useState([0, 500]);
   const [brands, setBrands] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
@@ -31,7 +31,7 @@ export default function Component() {
   const filteredProducts = products.filter(
     (product) =>
       product.name.toLowerCase().includes(search.toLowerCase()) &&
-      (category === "all" || product.category === category) &&
+      (category === 'all' || product.category === category) &&
       product.price >= priceRange[0] &&
       product.price <= priceRange[1] &&
       (brands.length === 0 || brands.includes(product.brand)),
@@ -91,7 +91,7 @@ export default function Component() {
         <div className="grid gap-8 lg:grid-cols-4">
           <div
             className={`lg:col-span-1 ${
-              showFilters ? "block" : "hidden lg:block"
+              showFilters ? 'block' : 'hidden lg:block'
             } space-y-6 bg-gray-900 p-6 rounded-lg`}
           >
             <div>

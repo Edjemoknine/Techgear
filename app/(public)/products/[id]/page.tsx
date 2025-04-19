@@ -1,48 +1,48 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Heart, MinusCircle, PlusCircle, Share2, Star } from "lucide-react";
-import { useState } from "react";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Heart, MinusCircle, PlusCircle, Share2, Star } from 'lucide-react';
+import { useState } from 'react';
 
 // Fake product data
 const product = {
   id: 1,
-  name: "G502 HERO Wireless Gaming Mouse",
+  name: 'G502 HERO Wireless Gaming Mouse',
   price: 99.99,
   description:
-    "The Logitech G502 HERO Wireless is outfitted with the most advanced and configurable sensor yet. It tracks so precisely, you always hit your target exactly where you need to.",
+    'The Logitech G502 HERO Wireless is outfitted with the most advanced and configurable sensor yet. It tracks so precisely, you always hit your target exactly where you need to.',
   specs: [
-    { name: "Sensor", value: "HERO 25K" },
-    { name: "Max DPI", value: "25,600" },
-    { name: "Buttons", value: "11 Programmable" },
-    { name: "Battery Life", value: "Up to 60 hours" },
+    { name: 'Sensor', value: 'HERO 25K' },
+    { name: 'Max DPI', value: '25,600' },
+    { name: 'Buttons', value: '11 Programmable' },
+    { name: 'Battery Life', value: 'Up to 60 hours' },
   ],
-  images: ["/fire.png", "/G502.png", "/Turbo.png", "/fire.png"],
+  images: ['/fire.png', '/G502.png', '/Turbo.png', '/fire.png'],
 };
 
 // Fake suggested products
 const suggestedProducts = [
   {
     id: 2,
-    name: "Pro Mechanical Keyboard",
+    name: 'Pro Mechanical Keyboard',
     price: 149.99,
-    image: "/Turbo.png",
-    description: "RGB Mechanical Gaming Keyboard",
+    image: '/Turbo.png',
+    description: 'RGB Mechanical Gaming Keyboard',
   },
   {
     id: 3,
-    name: "Studio Headphones",
+    name: 'Studio Headphones',
     price: 199.99,
-    image: "/G502.png",
-    description: "Professional Studio Headphones",
+    image: '/G502.png',
+    description: 'Professional Studio Headphones',
   },
   {
     id: 4,
-    name: "4K Gaming Monitor",
+    name: '4K Gaming Monitor',
     price: 399.99,
-    image: "/fire.png",
-    description: "27-inch 4K HDR Gaming Monitor",
+    image: '/fire.png',
+    description: '27-inch 4K HDR Gaming Monitor',
   },
 ];
 
@@ -67,7 +67,7 @@ export default function Component() {
                 <button
                   key={index}
                   className={`relative aspect-square overflow-hidden rounded-lg ${
-                    activeImage === index ? "ring-2 ring-blue-600" : ""
+                    activeImage === index ? 'ring-2 ring-blue-600' : ''
                   }`}
                   onClick={() => setActiveImage(index)}
                 >

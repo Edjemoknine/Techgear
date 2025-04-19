@@ -1,40 +1,40 @@
-import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 const messages = [
   {
     id: 1,
-    sender: "John Doe",
-    content: "Hello, I have a question about my order.",
-    time: "10:30 AM",
+    sender: 'John Doe',
+    content: 'Hello, I have a question about my order.',
+    time: '10:30 AM',
   },
   {
     id: 2,
-    sender: "Jane Smith",
-    content: "When will my package be shipped?",
-    time: "11:45 AM",
+    sender: 'Jane Smith',
+    content: 'When will my package be shipped?',
+    time: '11:45 AM',
   },
   {
     id: 3,
-    sender: "Bob Johnson",
-    content: "I need to change my shipping address.",
-    time: "1:15 PM",
+    sender: 'Bob Johnson',
+    content: 'I need to change my shipping address.',
+    time: '1:15 PM',
   },
   {
     id: 4,
-    sender: "Alice Brown",
-    content: "Is this product in stock?",
-    time: "2:30 PM",
+    sender: 'Alice Brown',
+    content: 'Is this product in stock?',
+    time: '2:30 PM',
   },
   {
     id: 5,
-    sender: "Charlie Davis",
-    content: "Can I get a refund for my order?",
-    time: "3:45 PM",
+    sender: 'Charlie Davis',
+    content: 'Can I get a refund for my order?',
+    time: '3:45 PM',
   },
 ];
 
@@ -68,9 +68,9 @@ export default function Messages() {
                     />
                     <AvatarFallback>
                       {message.sender
-                        .split(" ")
+                        .split(' ')
                         .map((n) => n[0])
-                        .join("")}
+                        .join('')}
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex-1 min-w-0">
@@ -102,9 +102,9 @@ export default function Messages() {
                     />
                     <AvatarFallback>
                       {message.sender
-                        .split(" ")
+                        .split(' ')
                         .map((n) => n[0])
-                        .join("")}
+                        .join('')}
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex-1">

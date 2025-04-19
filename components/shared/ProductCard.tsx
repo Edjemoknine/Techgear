@@ -1,6 +1,6 @@
-import { Heart } from "lucide-react";
-import Image from "next/image";
-import React from "react";
+import { Heart } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react';
 type Props = {
   image: string;
   title: string;

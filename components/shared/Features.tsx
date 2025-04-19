@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 import {
   Shield,
@@ -16,8 +16,8 @@ import {
   Gamepad,
   Keyboard,
   MonitorPlay,
-} from "lucide-react";
-import HeadTitle from "./HeadTitle";
+} from 'lucide-react';
+import HeadTitle from './HeadTitle';
 
 const Features = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,8 +26,8 @@ const Features = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
     <section className="py-24 bg-black max-w-7xl mx-auto px-8">
@@ -48,23 +48,23 @@ const Features = () => {
           {[
             {
               icon: Mouse,
-              title: "Precision Sensor",
-              description: "25K DPI for ultimate accuracy",
+              title: 'Precision Sensor',
+              description: '25K DPI for ultimate accuracy',
             },
             {
               icon: Gamepad,
-              title: "Ergonomic Design",
-              description: "Comfortable for extended sessions",
+              title: 'Ergonomic Design',
+              description: 'Comfortable for extended sessions',
             },
             {
               icon: Keyboard,
-              title: "Customizable",
-              description: "Programmable buttons & macros",
+              title: 'Customizable',
+              description: 'Programmable buttons & macros',
             },
             {
               icon: MonitorPlay,
-              title: "Low Latency",
-              description: "1ms response time",
+              title: 'Low Latency',
+              description: '1ms response time',
             },
           ].map((feature, index) => (
             <motion.div

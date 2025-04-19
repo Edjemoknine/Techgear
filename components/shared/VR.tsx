@@ -1,14 +1,14 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   ChevronRight,
   HeadphonesIcon,
   Laptop,
   PiggyBank,
   Shield,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 const VR = () => {
   return (
     <section className=" max-w-7xl  mx-auto px-8 my-20 ">

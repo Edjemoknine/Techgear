@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import {
   ArrowRight,
   Clock,
@@ -8,46 +8,46 @@ import {
   Shield,
   PenTool,
   Zap,
-} from "lucide-react";
+} from 'lucide-react';
 
 const services = [
   {
     icon: PenTool,
-    title: "Hardware Repair",
+    title: 'Hardware Repair',
     description:
-      "Professional repair services for all gaming peripherals and equipment",
-    price: "From $49.99",
+      'Professional repair services for all gaming peripherals and equipment',
+    price: 'From $49.99',
   },
   {
     icon: Cog,
-    title: "Custom Configuration",
+    title: 'Custom Configuration',
     description:
-      "Personalized setup and configuration of your gaming equipment",
-    price: "From $29.99",
+      'Personalized setup and configuration of your gaming equipment',
+    price: 'From $29.99',
   },
   {
     icon: Shield,
-    title: "Extended Warranty",
-    description: "Additional protection for your valuable gaming gear",
-    price: "From $19.99/year",
+    title: 'Extended Warranty',
+    description: 'Additional protection for your valuable gaming gear',
+    price: 'From $19.99/year',
   },
   {
     icon: Headphones,
-    title: "24/7 Support",
-    description: "Round-the-clock technical assistance and troubleshooting",
-    price: "Included",
+    title: '24/7 Support',
+    description: 'Round-the-clock technical assistance and troubleshooting',
+    price: 'Included',
   },
   {
     icon: Zap,
-    title: "Performance Optimization",
-    description: "Fine-tuning and optimization of your gaming setup",
-    price: "From $39.99",
+    title: 'Performance Optimization',
+    description: 'Fine-tuning and optimization of your gaming setup',
+    price: 'From $39.99',
   },
   {
     icon: Clock,
-    title: "Express Service",
-    description: "Priority handling and faster turnaround times",
-    price: "From $59.99",
+    title: 'Express Service',
+    description: 'Priority handling and faster turnaround times',
+    price: 'From $59.99',
   },
 ];
 

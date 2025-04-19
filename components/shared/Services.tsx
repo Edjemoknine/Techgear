@@ -1,44 +1,44 @@
-import React from "react";
-import HeadTitle from "./HeadTitle";
+import React from 'react';
+import HeadTitle from './HeadTitle';
 import {
   AppWindow,
   BookMarked,
   DollarSign,
   HeadphonesIcon,
-} from "lucide-react";
-import ServiceCard from "./ServiceCard";
-import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRight, Laptop, PiggyBank, Shield } from "lucide-react";
+} from 'lucide-react';
+import ServiceCard from './ServiceCard';
+import { Card, CardContent } from '@/components/ui/card';
+import { ChevronRight, Laptop, PiggyBank, Shield } from 'lucide-react';
 const servicesList = [
   {
     icon: BookMarked,
-    title: "Lifetime Guarantee",
+    title: 'Lifetime Guarantee',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!",
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!',
   },
   {
     icon: AppWindow,
-    title: "Free Software Updates",
+    title: 'Free Software Updates',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!",
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!',
   },
   {
     icon: DollarSign,
-    title: "Good Price",
+    title: 'Good Price',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!",
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!',
   },
   {
     icon: HeadphonesIcon,
-    title: "24/7 Support",
+    title: '24/7 Support',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!",
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit, quisquam at cupiditate soluta error ut! Sequi pariatur, aspernatur voluptatum laudantium modi, unde nesciunt esse quae commodi ab, illo eveniet!',
   },
 ];
 const Services = () => {
   return (
     <div className="mx-auto max-w-7xl px-8 grid place-items-center min-h-[600px]">
-      {" "}
+      {' '}
       <HeadTitle
         title="SERVICES"
         link="/services"
@@ -48,23 +48,23 @@ const Services = () => {
         {[
           {
             icon: Shield,
-            title: "Lifetime Guarantee",
-            description: "Quality assurance that lasts forever",
+            title: 'Lifetime Guarantee',
+            description: 'Quality assurance that lasts forever',
           },
           {
             icon: Laptop,
-            title: "Free Software Updates",
-            description: "Stay current with latest features",
+            title: 'Free Software Updates',
+            description: 'Stay current with latest features',
           },
           {
             icon: PiggyBank,
-            title: "Good Price",
-            description: "Competitive pricing for premium gear",
+            title: 'Good Price',
+            description: 'Competitive pricing for premium gear',
           },
           {
             icon: HeadphonesIcon,
-            title: "24/7 Support",
-            description: "Round-the-clock customer assistance",
+            title: '24/7 Support',
+            description: 'Round-the-clock customer assistance',
           },
         ].map((feature, index) => (
           <Card key={index} className="bg-gray-900 border-gray-800">

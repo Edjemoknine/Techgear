@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { MinusCircle, PlusCircle, ShoppingCart, Trash2 } from "lucide-react";
-import { useCart } from "@/context/CartContext";
+} from '@/components/ui/sheet';
+import { MinusCircle, PlusCircle, ShoppingCart, Trash2 } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
 
 export function CartSlider() {
   const { openCart, setOpenCart, cartItems, setCartItems } = useCart();
@@ -91,7 +91,7 @@ export function CartSlider() {
             ))}
           </div>
           <>
-            {" "}
+            {' '}
             {cartItems.length === 0 && (
               <p className="text-center text-gray-400 mt-8">
                 Your cart is empty
